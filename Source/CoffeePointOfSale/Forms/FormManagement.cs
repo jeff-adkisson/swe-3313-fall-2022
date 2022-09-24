@@ -21,10 +21,9 @@ public partial class FormManagement : FormNoCloseBase
         FormFactory.Get<FormMain>().Show(); //re-opens the main form
     }
 
-    private void OnLoad(object sender, EventArgs e)
+    protected override void OnLoad(object sender, EventArgs e)
     {
-        ConfigureWindow(); //sets window to proper size and position - all forms should all this at start of OnLoad
-        SetTitle("Management");
+        base.OnLoad(sender, e); //if we override OnLoad, we still need to call the base OnLoad method to setup the form in a standard fashion
         DemonstrateGettingCustomerList();
     }
 

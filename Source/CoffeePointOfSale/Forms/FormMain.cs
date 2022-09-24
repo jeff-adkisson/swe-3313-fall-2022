@@ -16,10 +16,4 @@ public partial class FormMain : FormBase
         Hide();
         FormFactory.Get<FormManagement>().ShowDialog();
     }
-
-    private void OnLoad(object sender, EventArgs e)
-    {
-        ConfigureWindow(); //sets window to proper size and position - all forms should all this at start of OnLoad
-        SetTitle();
-    }
 }

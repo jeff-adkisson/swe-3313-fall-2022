@@ -17,6 +17,12 @@ public class FormBase : Form
 
     protected IAppSettings AppSettings { get; init; } = new AppSettings();
 
+    protected virtual void OnLoad(object sender, EventArgs e)
+    {
+        ConfigureWindow(); //sets window to proper size and position - all forms should all this at start of OnLoad
+        SetTitle();
+    }
+
     protected void ConfigureWindow()
     {
         ClientSize = new Size(1348, 721); //equal to 1366x768 - a very common screen size
