@@ -6,12 +6,10 @@ namespace CoffeePointOfSale.Forms;
 
 public partial class FormMain : FormBase
 {
-    public FormMain()
-    { }
-
     public FormMain(IAppSettings appSettings) : base(appSettings)
     {
         InitializeComponent();
+        ConfigureWindow();
     }
 
     private void OnClickBtnManagement(object sender, EventArgs e)

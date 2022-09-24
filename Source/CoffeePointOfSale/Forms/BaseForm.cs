@@ -17,19 +17,29 @@ public class FormBase : Form
 
     protected IAppSettings AppSettings { get; init; } = new AppSettings();
 
+    protected void ConfigureWindow()
+    {
+        ClientSize = new Size(1348, 721); //equal to 1366x768 - a very common screen size
+        StartPosition = FormStartPosition.CenterScreen;
+        FormBorderStyle = FormBorderStyle.FixedSingle;
+        MinimizeBox = false;
+        MaximizeBox = false;
+    }
+
     private void InitializeComponent()
     {
-        this.SuspendLayout();
+        SuspendLayout();
         // 
         // FormBase
         // 
-        this.ClientSize = new System.Drawing.Size(282, 253);
-        this.Name = "FormBase";
-        this.ResumeLayout(false);
+        ClientSize = new Size(1348, 721);
+        Name = "FormBase";
+        StartPosition = FormStartPosition.CenterScreen;
+        ResumeLayout(false);
     }
 
     /// <summary>
-    /// Helper method to set the form title
+    ///     Helper method to set the form title
     /// </summary>
     /// <param name="title"></param>
     protected void SetTitle(string title = "")

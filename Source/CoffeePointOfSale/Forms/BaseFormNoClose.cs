@@ -33,7 +33,9 @@ public class FormNoCloseBase : FormBase
             // 
             // FormNoCloseBase
             // 
-            this.ClientSize = new System.Drawing.Size(282, 253);
+
+            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Name = "FormNoCloseBase";
             this.ResumeLayout(false);
 

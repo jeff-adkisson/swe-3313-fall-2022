@@ -11,6 +11,7 @@ public partial class FormManagement : FormNoCloseBase
     {
         _customerService = customerService;
         InitializeComponent();
+        ConfigureWindow();
     }
 
     private void OnClickBtnClose(object sender, EventArgs e)
