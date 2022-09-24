@@ -1,5 +1,5 @@
 using CoffeePointOfSale.Configuration;
-using CoffeePointOfSale.Services.Customer;
+using CoffeePointOfSale.Forms.Base;
 using CoffeePointOfSale.Services.FormFactory;
 
 namespace CoffeePointOfSale.Forms;
@@ -9,17 +9,17 @@ public partial class FormMain : FormBase
     public FormMain(IAppSettings appSettings) : base(appSettings)
     {
         InitializeComponent();
-        ConfigureWindow();
     }
 
     private void OnClickBtnManagement(object sender, EventArgs e)
     {
-        this.Hide();
-        FormFactory.Get(typeof(FormManagement)).ShowDialog();
+        Hide();
+        FormFactory.Get<FormManagement>().ShowDialog();
     }
 
     private void OnLoad(object sender, EventArgs e)
     {
+        ConfigureWindow(); //sets window to proper size and position - all forms should all this at start of OnLoad
         SetTitle();
     }
 }

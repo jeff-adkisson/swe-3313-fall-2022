@@ -7,7 +7,6 @@ namespace CoffeePointOfSale;
 internal static class Program
 {
     public static IServiceProvider? ServiceProvider { get; private set; }
-    public static FormBase MainForm { get; private set; } = null!;
 
     /// <summary>
     ///     The main entry point for the application.
@@ -25,8 +24,8 @@ internal static class Program
     private static void Start()
     {
         ApplicationConfiguration.Initialize();
-        MainForm = ServiceProvider!.GetRequiredService<FormMain>();
-        Application.Run(MainForm);
+        var mainForm = ServiceProvider!.GetRequiredService<FormMain>();
+        Application.Run(mainForm);
     }
 
     private static void SetupDisplay()

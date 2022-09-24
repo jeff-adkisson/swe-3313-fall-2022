@@ -1,4 +1,4 @@
-﻿using CoffeePointOfSale.Forms;
+﻿using CoffeePointOfSale.Forms.Base;
 
 namespace CoffeePointOfSale.Services.FormFactory;
 
@@ -12,8 +12,8 @@ public class FormFactory
         _provider = provider;
     }
 
-    public static FormBase Get(Type formType)
+    public static FormBase Get<T>()
     {
-        return _provider!.Create(formType);
+        return _provider!.Create(typeof(T));
     }
 }

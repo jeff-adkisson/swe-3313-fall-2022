@@ -1,4 +1,4 @@
-﻿using CoffeePointOfSale.Forms;
+﻿using CoffeePointOfSale.Forms.Base;
 
 namespace CoffeePointOfSale.Services.FormFactory;
 

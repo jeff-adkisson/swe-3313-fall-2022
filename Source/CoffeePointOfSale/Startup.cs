@@ -2,6 +2,7 @@ using System;
 using System.Reflection;
 using CoffeePointOfSale.Configuration;
 using CoffeePointOfSale.Forms;
+using CoffeePointOfSale.Forms.Base;
 using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.FormFactory;
 using CoffeePointOfSale.Services.Menu;

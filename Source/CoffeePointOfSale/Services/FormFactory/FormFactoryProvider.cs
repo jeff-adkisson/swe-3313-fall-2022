@@ -1,4 +1,4 @@
-﻿using CoffeePointOfSale.Forms;
+﻿using CoffeePointOfSale.Forms.Base;
 
 namespace CoffeePointOfSale.Services.FormFactory;
 
@@ -13,7 +13,7 @@ public class FormFactoryProvider : IFormFactory
 
     public FormBase Create(Type formType)
     {
-        return _serviceProvider.GetService(formType) as FormBase 
+        return _serviceProvider.GetService(formType) as FormBase
                ?? throw new Exception($"Type {formType} not registered as a FormBase type");
     }
 }

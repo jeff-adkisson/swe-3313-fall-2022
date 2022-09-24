@@ -1,6 +1,6 @@
 using CoffeePointOfSale.Configuration;
 
-namespace CoffeePointOfSale.Forms;
+namespace CoffeePointOfSale.Forms.Base;
 
 public class FormBase : Form
 {
