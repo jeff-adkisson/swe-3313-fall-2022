@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.32804.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeePointOfSale", "CoffeePointOfSale\CoffeePointOfSale.csproj", "{FAB7479A-B697-40AA-8766-C640BE6D21C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeePointOfSale", "CoffeePointOfSale\CoffeePointOfSale.csproj", "{FAB7479A-B697-40AA-8766-C640BE6D21C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{85B8FAE1-0634-40E2-9EB0-966EFEA6336D}"
+	ProjectSection(SolutionItems) = preProject
+		..\readme.md = ..\readme.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BaseProject", "BaseProject", "{7880123D-28F9-4FCD-8CB0-304521851FE1}"
+	ProjectSection(SolutionItems) = preProject
+		..\Documentation\Base Project\readme.md = ..\Documentation\Base Project\readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,6 +28,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7880123D-28F9-4FCD-8CB0-304521851FE1} = {85B8FAE1-0634-40E2-9EB0-966EFEA6336D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E9647FA-CD78-4EB8-AB8A-AA07DC1152EC}
