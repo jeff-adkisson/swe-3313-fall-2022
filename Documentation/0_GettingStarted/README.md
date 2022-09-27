@@ -78,7 +78,7 @@ You also need to reference these Nuget packages:
 
 ## Storage
 
-The ```StorageService``` reads and writes JSON files from/to the ```bin\Debug\net6.0\JsonStorage directory.
+The ```StorageService``` reads and writes JSON files from/to the `bin\Debug\net6.0\JsonStorage` directory.
 
 When you compile your application, it copies everything in the application's ```JsonStorage``` directory to the ```bin``` directory. Your
 Menu.json file will go in the application's ```JsonStorage``` directory where it will be copied into the ```bin``` directory for your
