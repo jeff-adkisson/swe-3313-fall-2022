@@ -4,6 +4,7 @@ using CoffeePointOfSale.Configuration;
 using CoffeePointOfSale.Forms;
 using CoffeePointOfSale.Forms.Base;
 using CoffeePointOfSale.Services.Customer;
+using CoffeePointOfSale.Services.DrinkMenu;
 using CoffeePointOfSale.Services.FormFactory;
 using CoffeePointOfSale.Services.Menu;
 using CoffeePointOfSale.Services.Storage;
@@ -35,7 +36,10 @@ internal static class Startup
     {
         services.AddSingleton<IStorageService, StorageService>();
         services.AddSingleton<ICustomerService, CustomerService>();
-        services.AddSingleton<MenuService>();
+        services.AddSingleton<IDrinkMenuService, DrinkMenuService>();
+
+        //add your dependencies here
+
         RegisterForms(services);
         services.AddLogging(configure => configure.AddConsole());
     }
