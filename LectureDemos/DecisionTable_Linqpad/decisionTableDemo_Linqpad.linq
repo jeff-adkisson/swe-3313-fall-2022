@@ -237,7 +237,7 @@ public static class WagesForPayPeriodReport {
 		decimal overTimeHours = 0m;
 		if (payrollDecisions.CalculateOvertime)
 		{
-			overTimeHours = settings.OvertimeHoursThreshold - employee.HoursWorked;
+			overTimeHours = employee.HoursWorked - settings.OvertimeHoursThreshold;
 		}
 
 		decimal regularHours = employee.HoursWorked - overTimeHours;
