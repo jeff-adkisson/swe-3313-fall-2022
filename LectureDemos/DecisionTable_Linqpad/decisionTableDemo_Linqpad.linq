@@ -5,19 +5,45 @@
 
 void Main()
 {
+	//get payroll settings
+	var payrollSettings = GetPayrollSettings();
+	payrollSettings.Dump("Payroll Settings"); //linqpad helper to show table on screen
+	
+	//get employee data
+	var employees = GetEmployees();
+	employees.Dump("Employees"); //linqpad helper to show table on screen
+	
+	//get payroll decisions using employees and settings
+	var payrollDecisions = GetPayrollDecisions(payrollSettings, employees);
+	payrollDecisions.Dump("Payroll Decisions"); //linqpad helper to show table on screen
+	
+	//generate wages for pay period report using payroll decisions
+	var wagesForPayPeriodReport = WagesForPayPeriodReport.Generate(payrollDecisions);
+	wagesForPayPeriodReport.Dump("Wages for Pay Period Report");
+	
+	//generate absence report using payroll decisions
+	var absenceReport = AbsenceReport.Generate(payrollDecisions);
+	absenceReport.Dump("Absence Report"); //linqpad helper to show table on screen
+}
+
+PayrollSettings GetPayrollSettings()
+{
 	//put settings that might change in some sort of configuration class
 	//to avoid burying magic numbers in code
-	var payrollSettings = new PayrollSettings { 
-		PayPeriodsPerYear = 24, 
+	return new PayrollSettings
+	{
+		PayPeriodsPerYear = 24,
 		OvertimeHoursThreshold = 40,
 		AbsenceWhenBelowHoursThreshold = 40,
 		OvertimeRate = 1.5m
 	};
-	payrollSettings.Dump("Payroll Settings"); //linqpad helper to show table on screen
-	
+}
+
+List<Employee> GetEmployees()
+{
 	//generate list of employees matching the decision table in
 	//the slide deck
-	var employees = new List<Employee> {
+	return new List<Employee> {
 		new EmployeeSalaried("Gus_1_S", 35, 25000m),
 		new EmployeeHourly("Oliver_2_H", 38, 12.5m),
 		new EmployeeSalaried("Chloe_3_S", 40, 26750m),
@@ -25,24 +51,19 @@ void Main()
 		new EmployeeSalaried("Poe_5_S", 50, 24350),
 		new EmployeeHourly("Tyger_6_H", 55, 13m),
 	};
-	employees.Dump("Employees"); //linqpad helper to show table on screen
-	
+}
+
+List<PayrollDecisions> GetPayrollDecisions(PayrollSettings payrollSettings, List<Employee> employees)
+{
 	//generate payroll decisions for each employee
 	var payrollDecisions = new List<PayrollDecisions>();
-	foreach (var employee in employees) {
+	foreach (var employee in employees)
+	{
 		payrollDecisions.Add(PayrollDecisions.GeneratePayrollDecisions(
-			payrollSettings, 
+			payrollSettings,
 			employee));
 	}
-	payrollDecisions.Dump("Payroll Decisions"); //linqpad helper to show table on screen
-	
-	//generate wages for pay period report
-	var wagesForPayPeriodReport = WagesForPayPeriodReport.Generate(payrollDecisions);
-	wagesForPayPeriodReport.Dump("Wages for Pay Period Report");
-	
-	//generate absence report
-	var absenceReport = AbsenceReport.Generate(payrollDecisions);
-	absenceReport.Dump("Absence Report"); //linqpad helper to show table on screen
+	return payrollDecisions;
 }
 
 //payroll settings so we don't bury values that might change
