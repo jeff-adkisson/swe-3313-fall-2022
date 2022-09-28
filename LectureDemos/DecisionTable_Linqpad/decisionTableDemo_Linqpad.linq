@@ -1,6 +1,4 @@
-<Query Kind="Program">
-  <Namespace>System.Text.Json</Namespace>
-</Query>
+<Query Kind="Program" />
 
 //decision table demonstration
 //use linqpad 7 to run this
