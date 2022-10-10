@@ -38,21 +38,21 @@ package RegistrationState {
     }
 
     class StateOpen{
-        + StateInitialization(Context)
+        + StateOpen(Context)
         + Do(Transition) 
         - AddStudent()
         - CancelCourse()
     }
 
     class StateCancelled {
-        + StateInitialization(Context)
+        + StateCancelled(Context)
         + Do(Transition) 
         - NotifyRegisteredStudents()
     }
 
 
     class StateClosed {
-        + StateInitialization(Context)
+        + StateClosed(Context)
         + Do(Transition) 
         - FinalizeCourse()
         - CancelCourse()
