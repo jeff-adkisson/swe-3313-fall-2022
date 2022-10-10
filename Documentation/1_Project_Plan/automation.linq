@@ -21,6 +21,7 @@ bool outputGrades = false;
 string projectPath = @"C:\Users\jadki\OneDrive\Documents\All Docs\My Docs\School\Faculty\2022 SWE 3313 Fall 2022\Coffee Project\Project Plan";
 
 void Main() {
+	Util.Cmd($"explorer {projectPath}");
 	if(outputGrades) {
 		WriteGrades();
 		return;
@@ -98,6 +99,8 @@ public class Team {
 		}
 		
 		var sb = new StringBuilder();
+		sb.AppendLine("Project Plan Assignment");
+		sb.AppendLine();
 		sb.AppendLine($"Team {Number}");
 		sb.AppendLine();
 		sb.AppendLine($"- {Name}");
