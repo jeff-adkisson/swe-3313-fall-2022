@@ -1,6 +1,12 @@
-@startuml
+'https://www.plantuml.com/plantuml/uml/bLJRZjGm37tlLqJYfSFI_O0AeOMkaFQ1YrX-mBJU4f4weyILWA7_JffCwq2BHETfV8vzV1AxkVCCZiV15CKPsc_GesgCHc9rAPHg3NYlFZhREnZKHGL8gNUWgJo5lrCn5LBs2NljsG5hIuyCZ44XvYEDW_hiWBoUkIYSVX_EI2_Mw7NNFVBO8R5WZR4Uin2eHHF3AOadXuqbnk-SIT-eu4LJ7wZHUSnmJJo3n1dsa0mtetD878ELpTBkRIddE6L4ynMenrXN9grJRZAqHFS4BIwD5fyN-39VMSlJHbkgbvphMQF26_11HRmzMwwW44WoookPM_wlrbd71meq6FqJ_XhYpHw_r_7FDkAzKcijfccL9o7Zakp0QHM4s3KzrsPE1JpcJpRpk8MKPB3RN9bGnzoyjwoVVgJF3HqkrhnOs7WmrcyD9FnezxUQqgGEZ6HP-qg9Q8w__7Lxc-rrf2HyNgtBdHDpMLNjBkTEdep-dwHCQZz5Bd9-zwwFObtFpw6ggbUBoRg-jyKTKZSEvZS0
 
-'https://www.plantuml.com/plantuml/uml/fLF1JiCm3BtdAo9nwJIwB-0mA4BQ1IJ63vZMAn6PEoMk18pzEub3brMg459FRPxjzvndP-qP7FTxgzG1wdTeKJzZQpmxODFHbe5H7nLIlzSl3iYR20T4wwS3qdNutZRDbli6YUEfifr7-G6gqQgJKhK5xtNL4UC7I-bI1m53RG1xvr4GGnoFn7BQ9EMgTmw9vH1m2TrtHUva8L3r1jIYP1MfSX650oMw7TGuq4Nj8xp6szLy6ZD9nH3JgMUfkWCVAgFsLGQAt-k8_j-S5rGR2Z1OymLd5vTJaJ7xc38sKkfpFYOBYuN0SIOZ84tX38tRYTapUiY3_uzO2bfivbpxiMEp-qmRYWu7VIzgOpdR-NbQ3uQomLD-HicqM26GomVivdkrkjWWbN_BuJ5aB6INvUIIJEN8v2O3sUNfS795p5eZDU7X_m00
+@startuml
+package Client {
+  class Program { 
+    Main()
+  }
+}
+
 
 package RegistrationState {
 
@@ -25,6 +31,8 @@ package RegistrationState {
     }
 
     abstract class StateBase { 
+        # Context
+
         # StateBase(Context)
         + {abstract} Do(Transition)
     }
@@ -60,11 +68,12 @@ package RegistrationState {
 
     IState - Transition
     IState <|.. StateBase 
-    StateBase - Context
+    StateBase *- Context
     StateBase <|-- StateInitialization 
     StateBase <|-- StateOpen
     StateBase <|-- StateCancelled 
     StateBase <|-- StateClosed 
 }
 
+Program::Main --> Context::Do
 @enduml
