@@ -1,0 +1,70 @@
+@startuml
+
+'https://www.plantuml.com/plantuml/uml/fLF1JiCm3BtdAo9nwJIwB-0mA4BQ1IJ63vZMAn6PEoMk18pzEub3brMg459FRPxjzvndP-qP7FTxgzG1wdTeKJzZQpmxODFHbe5H7nLIlzSl3iYR20T4wwS3qdNutZRDbli6YUEfifr7-G6gqQgJKhK5xtNL4UC7I-bI1m53RG1xvr4GGnoFn7BQ9EMgTmw9vH1m2TrtHUva8L3r1jIYP1MfSX650oMw7TGuq4Nj8xp6szLy6ZD9nH3JgMUfkWCVAgFsLGQAt-k8_j-S5rGR2Z1OymLd5vTJaJ7xc38sKkfpFYOBYuN0SIOZ84tX38tRYTapUiY3_uzO2bfivbpxiMEp-qmRYWu7VIzgOpdR-NbQ3uQomLD-HicqM26GomVivdkrkjWWbN_BuJ5aB6INvUIIJEN8v2O3sUNfS795p5eZDU7X_m00
+
+package RegistrationState {
+
+    enum Transition {
+        Open,
+        AddStudent,
+        Close,
+        Cancel
+    }
+
+    class Context {
+        + string Course
+        + int Count
+        + IState CurrentState
+        
+        + Do(Transition)
+        + ChangeState(IState)
+    }
+
+    interface IState {
+      {abstract} Do(Transition)
+    }
+
+    abstract class StateBase { 
+        # StateBase(Context)
+        + {abstract} Do(Transition)
+    }
+
+    class StateInitialization {
+        + StateInitialization(Context)
+        + Do(Transition) 
+        - InitializeCourse()
+        - OpenCourse()
+        - CancelCourse()
+    }
+
+    class StateOpen{
+        + StateInitialization(Context)
+        + Do(Transition) 
+        - AddStudent()
+        - CancelCourse()
+    }
+
+    class StateCancelled {
+        + StateInitialization(Context)
+        + Do(Transition) 
+        - NotifyRegisteredStudents()
+    }
+
+
+    class StateClosed {
+        + StateInitialization(Context)
+        + Do(Transition) 
+        - FinalizeCourse()
+        - CancelCourse()
+    }
+
+    IState - Transition
+    IState <|.. StateBase 
+    StateBase - Context
+    StateBase <|-- StateInitialization 
+    StateBase <|-- StateOpen
+    StateBase <|-- StateCancelled 
+    StateBase <|-- StateClosed 
+}
+
+@enduml
