@@ -15,12 +15,12 @@ To run from a Windows machine (or Windows virtual):
     
 3. Execute `dotnet run`:
    
-   ![[WackyChatUi.png]] 
+   ![UI](https://raw.githubusercontent.com/jeff-adkisson/swe_3313_fall_2022/main/LectureDemos/WackyChat/Diagrams/WackyChatUi.png) 
 
 4. Type your message and press Enter. Anyone connected to the Wacky Chat message bus will see the message.
 
-![[EventDrivenUi.png]]
+![UI](https://raw.githubusercontent.com/jeff-adkisson/swe_3313_fall_2022/main/LectureDemos/WackyChat/Diagrams/EventDrivenUi.png) 
 
-![[EventDrivenViaMessageBus.png]]
+![UI](https://raw.githubusercontent.com/jeff-adkisson/swe_3313_fall_2022/main/LectureDemos/WackyChat/Diagrams/EventDrivenViaMessageBus.png) 
 
-![[CloudAMPQFreeInstance.png]]
+![UI](https://raw.githubusercontent.com/jeff-adkisson/swe_3313_fall_2022/main/LectureDemos/WackyChat/Diagrams/CloudAMPQFreeInstance.png) 
