@@ -26,7 +26,16 @@ public partial class MainForm : Form
 
     private void OnLoad(object sender, EventArgs e)
     {
-        Task.Run(async () => await ConfigureBus(txtInboundMessages, lblMostRecentMsg)).Wait();
+        var successfulConnection = false;
+        Task.Run(async () =>
+        {
+            successfulConnection = await ConfigureBus(txtInboundMessages, lblMostRecentMsg);
+        }).Wait();
+
+        if (!successfulConnection)
+        {
+            Close();
+        }
     }
 
     private void OnOutboundMsgKeyPress(object sender, KeyPressEventArgs e)
@@ -44,17 +53,37 @@ public partial class MainForm : Form
         Task.Run(async () => await SendMessage(outboundMsg)).Wait();
     }
 
-    private async Task ConfigureBus(TextBox inboundMessageTextBox, Label mostRecentMsgLabel)
+    private async Task<bool> ConfigureBus(TextBox inboundMessageTextBox, Label mostRecentMsgLabel)
     {
-        _rabbitMqConfig = RabbitMqConfig.GetConfig();
-        _bus = RabbitHutch.CreateBus(_rabbitMqConfig.ConnectionString);
+        while (true)
+        {
+            try
+            {
+                _rabbitMqConfig = RabbitMqConfig.GetConfig();
+                _bus = RabbitHutch.CreateBus(_rabbitMqConfig.ConnectionString);
 
-        //subscribe to messages
-        await _bus.PubSub.SubscribeAsync<WackyChatMessage>(
-            _rabbitMqConfig.WhoAmI,
-            msg =>
-                ShowInboundMessage(msg, inboundMessageTextBox, mostRecentMsgLabel),
-            subscriptionConfig => subscriptionConfig.WithExpires(5 * 60 * 1000));
+                //subscribe to messages
+                await _bus!.PubSub.SubscribeAsync<WackyChatMessage>(
+                    _rabbitMqConfig!.WhoAmI,
+                    msg =>
+                        ShowInboundMessage(msg, inboundMessageTextBox, mostRecentMsgLabel),
+                    subscriptionConfig => subscriptionConfig.WithExpires(5 * 60 * 1000));
+
+                break;
+            }
+            catch (Exception e)
+            {
+                var msg = $"Failed to establish connection to message bus at {_rabbitMqConfig!.Host}. " +
+                          $"Verify you are connected to a network and that the appsettings.json configuration is correct. " +
+                          $"The error returned by the application was {e.Message}. Click Cancel to end or Retry to try again.";
+                var action = MessageBox.Show(
+                    msg,
+                    @"Could not connect to message bus",
+                    MessageBoxButtons.RetryCancel);
+                if (action == DialogResult.Cancel) return false;
+            }
+        }
+        return true;
     }
 
     private void ShowInboundMessage(WackyChatMessage inboundMessage, TextBox textBox, Label mostRecentMsgLabel)

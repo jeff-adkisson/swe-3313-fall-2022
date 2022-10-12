@@ -1,8 +1,3 @@
-using System.Text.RegularExpressions;
-using EasyNetQ;
-using Microsoft.Extensions.Configuration;
-using Spectre.Console;
-
 namespace WackyChat;
 
 static class Program
