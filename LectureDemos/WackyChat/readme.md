@@ -15,12 +15,12 @@ To run from a Windows machine (or Windows virtual):
     
 3. Execute `dotnet run`:
    
-   ![[wacky chat UI.png ]] 
+   ![[Diagrams/wacky chat UI.png]] 
 
 4. Type your message and press Enter. Anyone connected to the Wacky Chat message bus will see the message.
 
-![[Event Driven UI.png]]
+![[Diagrams/Event Driven UI.png]]
 
-![[Event Driven via Message Bus.png]]
+![[Diagrams/Event Driven via Message Bus.png]]
 
-![[CloudAMQP free instance.png]]
+![[Diagrams/CloudAMQP free instance.png]]
