@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="29.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.10" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
@@ -19,6 +20,10 @@
   <ItemGroup>
     <Folder Include="wwwroot\images\drinkMenu" />
     <Folder Include="wwwroot\images\hero" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="Views\Management\Index.cshtml" />
   </ItemGroup>
 
 </Project>

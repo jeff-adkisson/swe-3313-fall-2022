@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Mvc_Coffee.Services.CsvExtract;
 using Mvc_Coffee.Services.DrinkMenu;
 
 namespace Mvc_Coffee
@@ -25,7 +26,10 @@ namespace Mvc_Coffee
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
-            services.AddSingleton<IDrinkMenuService, DrinkMenuService>();
+            
+            //add custom services to DI container
+            DrinkMenuService.ConfigureService(services);
+            CsvExtractService.ConfigureService(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
