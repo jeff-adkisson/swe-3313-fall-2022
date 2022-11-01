@@ -1,0 +1,5 @@
+CustomerId,TransactionDateTime,Subtotal,Tax,Total,Payment,RewardsPointsRedeemed,OrderDescription
+404-123-1234,10/29/2022 06:19:46,9.75,0.58,10.33,Rewards,104,"$3.75 Latte Small,Extra Hot,Oat Milk | $6.00 Matcha Green Tea Latte Large,Iced,Non Fat Milk"
+404-123-1234,10/30/2022 09:45:46,2.00,0.12,2.12,Credit Card,0,$2.00 Coffee
+706-777-1234,10/30/2022 22:31:46,3.00,0.18,3.18,Rewards,32,"$0.00 Water | $3.00 Coffee Large,Room for Cream"
+706-777-1234,10/31/2022 16:30:46,4.00,0.24,4.24,Credit Card,0,$0.00 Water | $4.00 Matcha Green Tea Latte Small
