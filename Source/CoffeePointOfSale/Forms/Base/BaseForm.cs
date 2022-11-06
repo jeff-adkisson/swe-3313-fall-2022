@@ -7,6 +7,8 @@ public class FormBase : Form
     public FormBase()
     {
         //this constructor is ONLY for design time layout. Do NOT put anything else here.
+        InitializeComponent();
+        ConfigureWindow();
     }
 
     public FormBase(IAppSettings appSettings) : this()
@@ -30,6 +32,7 @@ public class FormBase : Form
         FormBorderStyle = FormBorderStyle.FixedSingle;
         MinimizeBox = false;
         MaximizeBox = false;
+        this.Refresh();
     }
 
     private void InitializeComponent()
