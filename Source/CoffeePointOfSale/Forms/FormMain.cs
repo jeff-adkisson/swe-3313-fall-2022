@@ -14,6 +14,11 @@ public partial class FormMain : FormBase
     private void OnClickBtnManagement(object sender, EventArgs e)
     {
         Hide();
-        FormFactory.Get<FormManagement>().ShowDialog();
+        FormFactory.Get<FormManagement>().Show();
+    }
+
+    private void OnFormMainClosed(object sender, FormClosedEventArgs e)
+    {
+        Application.Exit();
     }
 }

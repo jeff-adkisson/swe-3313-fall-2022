@@ -19,54 +19,59 @@ Your `FormMain` is already configured, aside from adding whatever graphics, logi
 Carefully review `FormManagement`. It demonstrates many of the instructions in the rest of this section.
 
 To properly add a new form to the base project:
+
 1. Add a new Form in Visual Studio 2022, then view the code.
-    <img src="assets/README/image-20221106130107657.png" alt="image-20221106130107657" style="zoom:25%;" />
+   <img src="assets/README/image-20221106130107657.png" alt="image-20221106130107657" style="zoom:25%;" />
 
 1. Modify the constructor to inherit from `Base.BaseFormNoClose`. This will ensure your form is automatically registered with the Dependency Injection container. For example, if you have a new form named *Customers*, change it to:
-    `public partial class Customers : Base.FormNoCloseBase`
+   `public partial class Customers : Base.FormNoCloseBase`
 
 1. Open the `InitializeComponent()` method in your form's `.designer.cs` file. This is called from the constructor of your new form.  *Remove* the following line to make sure your form is the correct size (the `Base.BaseFormNoClose` class will set the size for you):
-    `this.ClientSize = new System.Drawing.Size(800, 450);`
+   `this.ClientSize = new System.Drawing.Size(800, 450);`
 
-    <img src="assets/README/image-20221106130545961.png" alt="image-20221106130545961" style="zoom:25%;" />
+   <img src="assets/README/image-20221106130545961.png" alt="image-20221106130545961" style="zoom:25%;" />
 
-    After making this change, save all changes, close the form and re-open it. Look at the form's `Size` property from the designer to verify it is now `1366,768`. If you do not see that, review the prior steps carefully. All of your forms will be this size.
-    <img src="assets/README/image-20221106123953003.png" alt="image-20221106123953003" style="zoom:50%;" /> 
+   After making this change, save all changes, close the form and re-open it. Look at the form's `Size` property from the designer to verify it is now `1366,768`. If you do not see that, review the prior steps carefully. All of your forms will be this size.
+   <img src="assets/README/image-20221106123953003.png" alt="image-20221106123953003" style="zoom:50%;" /> 
 
 1. Add a constructor of to your new form to receive the application's settings (and any other dependencies in the Services folder). Do not add parameters to the original constructor (you will get an error in the WinForms VS designer). For example:
-    ```c#
-    private IAppSettings? _appSettings;
-    public Customers(IAppSettings appSettings) : this()
-    {
-        _appSettings = appSettings;
-    }
-    ```
 
-    After adding this constructor, your new form will automatically receive the application's configuration settings (such as Tax Rate) in the `_appSettings` field. Remember to use the configuration to avoid hardcoding important values that might change such as Tax Rate and Reward Points Per Dollar.
-    <img src="assets/README/image-20221106124648246.png" alt="image-20221106124648246" style="zoom:25%;" />
+   ```c#
+   private IAppSettings? _appSettings;
+   public Customers(IAppSettings appSettings) : this()
+   {
+       _appSettings = appSettings;
+   }
+   ```
+
+   After adding this constructor, your new form will automatically receive the application's configuration settings (such as Tax Rate) in the `_appSettings` field. Remember to use the configuration to avoid hardcoding important values that might change such as Tax Rate and Reward Points Per Dollar.
+   <img src="assets/README/image-20221106124648246.png" alt="image-20221106124648246" style="zoom:25%;" />
 
 1. Add any logic you want to execute when the form loads to the `OnLoad` event. When you overload `OnLoad`, do not forget to call `base.OnLoad`:
 
-    ```c#
-    protected override void OnLoad(object sender, EventArgs e)
-    {
-        base.OnLoad(sender, e); //if we override OnLoad, we still need to call the base OnLoad method to setup the form in a standard fashion
-        //put your onload code here...
-    }
-    ```
+   ```c#
+   protected override void OnLoad(object sender, EventArgs e)
+   {
+       base.OnLoad(sender, e); //if we override OnLoad, we still need to call the base OnLoad method to setup the form in a standard fashion
+       //put your onload code here...
+   }
+   ```
 
-    <img src="assets/README/image-20221106124229073.png" alt="image-20221106124229073" style="zoom:25%;" />
+   <img src="assets/README/image-20221106124229073.png" alt="image-20221106124229073" style="zoom:25%;" />
 
-1. To close a your form, call the `this.Close()` method. To return to `FormMain`, call `FormFactory.Get<FormMain>().Show();` after calling `Close()`. 
+1. To close a form that is *not* `FormMain`, call the `this.Close()` method. To return to `FormMain`, call `FormFactory.Get<FormMain>().Show();` after calling `Close()`. 
+   When using `FormMain`, call `this.Hide()` before showing another form. Calling `Close` from `FormMain` will exit your application.
 
 1. To test your new form, add a button to *another* form such as `FormMain` and open the new form like this from the button's `Click` event:
-    ```FormFactory.Get<NewFormClassNameHere>().Show();```
-    **If this call fails**, your new form does not inhert from the `Base.BaseFormNoClose` base form.
+   ```FormFactory.Get<NewFormClassNameHere>().Show();```
+   **If this call fails**, your new form does not inhert from the `Base.BaseFormNoClose` base form.
 
 1. After opening your new form, you will note you cannot close it. The  `Base.BaseFormNoClose` form disables that functionality. Add a button that returns to `FormMain` like I demonstrated in `FormManagement`:
-    <img src="assets/README/image-20221106125107057.png" alt="image-20221106125107057" style="zoom:25%;" />
+   <img src="assets/README/image-20221106125107057.png" alt="image-20221106125107057" style="zoom:25%;" />
 
- ## Registering services
+
+
+## Registering services
 
 The base project uses the Microsoft dependency injection (DI) framework to help you decouple your code using the Inversion of Control (IoC) pattern. This is one of the methods we discussed to help reduce coupling in our code.
 

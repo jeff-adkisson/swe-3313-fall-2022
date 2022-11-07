@@ -57,7 +57,8 @@ To properly add a new form to the base project:
 
     <img src="assets/README/image-20221106124229073.png" alt="image-20221106124229073" style="zoom:25%;" />
 
-1. To close a your form, call the `this.Close()` method. To return to `FormMain`, call `FormFactory.Get<FormMain>().Show();` after calling `Close()`. 
+1. To close a form that is *not* `FormMain`, call the `this.Close()` method. To return to `FormMain`, call `FormFactory.Get<FormMain>().Show();` after calling `Close()`. 
+    When using `FormMain`, call `this.Hide()` before showing another form. Calling `Close` from `FormMain` will exit your application.
 
 1. To test your new form, add a button to *another* form such as `FormMain` and open the new form like this from the button's `Click` event:
     ```FormFactory.Get<NewFormClassNameHere>().Show();```
