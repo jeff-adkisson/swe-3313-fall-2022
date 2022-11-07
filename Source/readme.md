@@ -60,7 +60,7 @@ To properly add a new form to the base project:
 1. To close a your form, call the `this.Close()` method. To return to `FormMain`, call `FormFactory.Get<FormMain>().Show();` after calling `Close()`. 
 
 1. To test your new form, add a button to *another* form such as `FormMain` and open the new form like this from the button's `Click` event:
-    ```FormFactory.Get<NewFormClassNameHere>().ShowDialog();```
+    ```FormFactory.Get<NewFormClassNameHere>().Show();```
     **If this call fails**, your new form does not inhert from the `Base.BaseFormNoClose` base form.
 
 1. After opening your new form, you will note you cannot close it. The  `Base.BaseFormNoClose` form disables that functionality. Add a button that returns to `FormMain` like I demonstrated in `FormManagement`:
