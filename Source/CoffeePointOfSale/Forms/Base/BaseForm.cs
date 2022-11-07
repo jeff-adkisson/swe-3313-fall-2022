@@ -9,42 +9,38 @@ public class FormBase : Form
         //this constructor is ONLY for design time layout. Do NOT put anything else here.
         InitializeComponent();
         ConfigureWindow();
+        _appSettings = new AppSettings();
     }
 
     public FormBase(IAppSettings appSettings) : this()
     {
-        AppSettings = appSettings;
+        _appSettings = appSettings;
         InitializeComponent();
     }
 
-    protected IAppSettings AppSettings { get; init; } = new AppSettings();
-
-    protected virtual void OnLoad(object sender, EventArgs e)
-    {
-        ConfigureWindow(); //sets window to proper size and position - all forms should all this at start of OnLoad
-        SetTitle();
-    }
+    private IAppSettings _appSettings;
 
     protected void ConfigureWindow()
     {
-        ClientSize = new Size(1348, 721); //equal to 1366x768 - a very common screen size
-        StartPosition = FormStartPosition.CenterScreen;
-        FormBorderStyle = FormBorderStyle.FixedSingle;
-        MinimizeBox = false;
-        MaximizeBox = false;
-        this.Refresh();
+        InitializeComponent();
+        PerformLayout();
     }
 
     private void InitializeComponent()
     {
-        SuspendLayout();
-        // 
-        // FormBase
-        // 
-        ClientSize = new Size(1348, 721);
-        Name = "FormBase";
-        StartPosition = FormStartPosition.CenterScreen;
-        ResumeLayout(false);
+            this.SuspendLayout();
+            // 
+            // FormBase
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.Name = "FormBase";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FormBase";
+            this.Load += new System.EventHandler(this.OnLoadFormBase);
+            this.ResumeLayout(false);
+
     }
 
     /// <summary>
@@ -54,7 +50,13 @@ public class FormBase : Form
     protected void SetTitle(string title = "")
     {
         Text = string.IsNullOrWhiteSpace(title)
-            ? AppSettings.App.Name
-            : $"{title} | {AppSettings.App.Name}";
+            ? _appSettings.App.Name
+            : $"{title} | {_appSettings.App.Name}";
+    }
+
+    private void OnLoadFormBase(object sender, EventArgs e)
+    {
+        ConfigureWindow(); //sets window to proper size and position - all forms should all this at start of OnLoad
+        SetTitle();
     }
 }

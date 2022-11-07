@@ -47,17 +47,14 @@ To properly add a new form to the base project:
    After adding this constructor, your new form will automatically receive the application's configuration settings (such as Tax Rate) in the `_appSettings` field. Remember to use the configuration to avoid hardcoding important values that might change such as Tax Rate and Reward Points Per Dollar.
    <img src="assets/README/image-20221106124648246.png" alt="image-20221106124648246" style="zoom:25%;" />
 
-1. Add any logic you want to execute when the form loads to the `OnLoad` event. When you overload `OnLoad`, do not forget to call `base.OnLoad`:
+1. Add any logic you want to execute when the form loads to the `Load` event. Open the events list for the form and double-click on the empty space next to `Load` to have Visual Studio create the event for you. Then add your logic to the event method. For example, this is in `FormManagement` to load the customer list:
 
    ```c#
-   protected override void OnLoad(object sender, EventArgs e)
+   private void OnLoadFormManagement(object sender, EventArgs e)
    {
-       base.OnLoad(sender, e); //if we override OnLoad, we still need to call the base OnLoad method to setup the form in a standard fashion
-       //put your onload code here...
+       DemonstrateGettingCustomerList();
    }
    ```
-
-   <img src="assets/README/image-20221106124229073.png" alt="image-20221106124229073" style="zoom:25%;" />
 
 1. To close a form that is *not* `FormMain`, call the `this.Close()` method. To return to `FormMain`, call `FormFactory.Get<FormMain>().Show();` after calling `Close()`. 
    When using `FormMain`, call `this.Hide()` before showing another form. Calling `Close` from `FormMain` will exit your application.

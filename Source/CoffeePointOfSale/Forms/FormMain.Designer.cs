@@ -52,7 +52,6 @@ sealed partial class FormMain
             this.Name = "FormMain";
             this.Text = "Form";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormMainClosed);
-            this.Load += new System.EventHandler(this.OnLoad);
             this.ResumeLayout(false);
 
     }

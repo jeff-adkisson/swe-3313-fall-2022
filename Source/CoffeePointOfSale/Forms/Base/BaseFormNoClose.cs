@@ -10,13 +10,19 @@ public class FormNoCloseBase : FormBase
     public FormNoCloseBase()
     {
         //this constructor is ONLY for design time layout. Do NOT put anything else here.
-        InitializeComponent();
+        HideControlBox();
     }
 
     public FormNoCloseBase(IAppSettings appSettings) : base(appSettings)
     {
-        InitializeComponent();
-        ControlBox = false; //hide min max close X
+        HideControlBox();
+    }
+
+    private void HideControlBox()
+    {
+        this.ControlBox = false;
+        this.MaximizeBox = false;
+        this.MinimizeBox = false;
     }
 
     protected override CreateParams CreateParams
@@ -31,14 +37,18 @@ public class FormNoCloseBase : FormBase
 
     private void InitializeComponent()
     {
-        SuspendLayout();
-        // 
-        // FormNoCloseBase
-        // 
+            this.SuspendLayout();
+            // 
+            // FormNoCloseBase
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ControlBox = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FormNoCloseBase";
+            this.Text = "App AnonymousCustomerId Not Set";
+            this.ResumeLayout(false);
 
-        ClientSize = new Size(1348, 721);
-        StartPosition = FormStartPosition.CenterScreen;
-        Name = "FormNoCloseBase";
-        ResumeLayout(false);
     }
 }

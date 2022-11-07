@@ -67,14 +67,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(1348, 721);
             this.Controls.Add(this.lblRemoveThis);
             this.Controls.Add(this.txtDeleteThis);
             this.Controls.Add(this.btnClose);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormManagement";
             this.Text = "FormManagement";
-            this.Load += new System.EventHandler(this.OnLoad);
+            this.Load += new System.EventHandler(this.OnLoadFormManagement);
             this.ResumeLayout(false);
             this.PerformLayout();
 
