@@ -6,4 +6,6 @@ namespace Mvc_Coffee.Services.DrinkMenu;
 public interface IDrinkMenuService
 {
     public IReadOnlyList<DrinkModel> Drinks { get; }
+
+    List<DrinkModelCsvLine> ConvertToCsvModel();
 }

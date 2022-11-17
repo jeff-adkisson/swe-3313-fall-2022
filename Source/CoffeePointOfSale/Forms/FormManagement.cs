@@ -8,10 +8,12 @@ namespace CoffeePointOfSale.Forms;
 public partial class FormManagement : FormNoCloseBase
 {
     private readonly ICustomerService _customerService;
+    private IAppSettings _appSettings;
 
     public FormManagement(IAppSettings appSettings, ICustomerService customerService) : base(appSettings)
     {
         _customerService = customerService;
+        _appSettings = appSettings;
         InitializeComponent();
     }
 
@@ -19,12 +21,6 @@ public partial class FormManagement : FormNoCloseBase
     {
         Close(); //closes this form
         FormFactory.Get<FormMain>().Show(); //re-opens the main form
-    }
-
-    protected override void OnLoad(object sender, EventArgs e)
-    {
-        base.OnLoad(sender, e); //if we override OnLoad, we still need to call the base OnLoad method to setup the form in a standard fashion
-        DemonstrateGettingCustomerList();
     }
 
     /// <summary>
@@ -37,5 +33,10 @@ public partial class FormManagement : FormNoCloseBase
         {
             var customer = customerList[customerIdx];
         }
+    }
+
+    private void OnLoadFormManagement(object sender, EventArgs e)
+    {
+        DemonstrateGettingCustomerList();
     }
 }

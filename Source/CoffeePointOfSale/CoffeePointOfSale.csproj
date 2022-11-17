@@ -30,6 +30,9 @@
     <None Update="JsonStorage\Customers.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="JsonStorage\DrinkMenu.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="JsonStorage\readme.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

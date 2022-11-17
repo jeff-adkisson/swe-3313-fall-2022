@@ -139,9 +139,8 @@ sealed partial class FormMain
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form";
-            this.Load += new System.EventHandler(this.OnLoad);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormMainClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

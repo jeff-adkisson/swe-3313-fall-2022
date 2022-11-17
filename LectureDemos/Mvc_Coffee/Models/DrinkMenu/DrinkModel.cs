@@ -19,4 +19,9 @@ public class DrinkModel
         get => _customizations;
         set => _customizations = value ?? new List<Customization>();
     }
+
+    public override string ToString()
+    {
+        return $"{Name}: {BasePrice:C2}";
+    }
 }

@@ -1,6 +1,8 @@
 <Query Kind="Program">
   <NuGetReference>CompareNETObjects</NuGetReference>
+  <NuGetReference>Newtonsoft.Json</NuGetReference>
   <Namespace>KellermanSoftware.CompareNetObjects</Namespace>
+  <Namespace>Newtonsoft.Json</Namespace>
   <Namespace>System.Text.Json</Namespace>
 </Query>
 
@@ -12,15 +14,12 @@ void Main()
 	originalConfig.Dump("originalConfig Instance");
 	
 	//serialize to JSON
-	var jsonSerializerOptions = new JsonSerializerOptions { 
-		WriteIndented = true,
-		//PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-	}; //optional, makes json pretty
-	var configJson = System.Text.Json.JsonSerializer.Serialize(originalConfig, jsonSerializerOptions);
+
+	var configJson = JsonConvert.SerializeObject(originalConfig, Newtonsoft.Json.Formatting.Indented);
 	configJson.Dump("JSON from originalConfig instance");
 	
 	//deserialize to new instance
-	var deserializedJsonConfig = System.Text.Json.JsonSerializer.Deserialize<Configuration>(configJson);
+	var deserializedJsonConfig = JsonConvert.DeserializeObject<Configuration>(configJson);
 	deserializedJsonConfig.Dump("deserializedConfig created from originalConfig JSON");
 	
 	//compare original and new (using the CompareNetObjects package)

@@ -13,3 +13,6 @@ This project demonstrates:
 
 ## To run in Visual Studio
 1. Open `Mvc_Coffee.csproj` in Visual Studio.
+
+## To share via NGrok (if installed)
+`ngrok http https://localhost:5001 --subdomain=swe3313`

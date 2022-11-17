@@ -80,9 +80,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormManagement";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormManagement";
-            this.Load += new System.EventHandler(this.OnLoad);
+            this.Load += new System.EventHandler(this.OnLoadFormManagement);
             this.ResumeLayout(false);
             this.PerformLayout();
 
