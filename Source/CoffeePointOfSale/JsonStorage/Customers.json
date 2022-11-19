@@ -1,7 +1,8 @@
 {
   "Orders": [
     {
-      "CustomerID": "08f1f677-dc59-4eac-9b15-cb9a7b3fa347",
+      "OrderID": "2d97cc34-e064-4521-941c-aaa994118d82",
+      "CustomerID": "678-101-1234",
       "DateTime": "2022-10-1 11:11:11",
       "Total": 11.40,
       "Tax": 0.65,
@@ -40,7 +41,8 @@
       ]
     },
     {
-      "CustomerID": "929e8dc7-fa49-4a49-9ac8-7a9c987b1020",
+      "OrderID": "b55e1067-69d1-4315-ad85-b8f0e6fde58f",
+      "CustomerID": "123-456-7890",
       "DateTime": "2022-10-1 9:10:54",
       "Total": 13.25,
       "Tax": 0.75,
@@ -79,7 +81,8 @@
       ]
     },
     {
-      "CustomerID": "929e8dc7-fa49-4a49-9ac8-7a9c987b1020",
+      "OrderID": "6dfe31a8-e5af-4a59-a9e7-f5d929bff263",
+      "CustomerID": "123-456-7890",
       "DateTime": "2022-10-2 9:09:02",
       "Total": 13.25,
       "Tax": 0.75,
@@ -119,33 +122,29 @@
     }
   ],
   "Customers": {
-    "000-000-0000": {
-      "Phone": "000-000-0000",
+    "anonymous": {
+      "Phone": "anonymous",
       "RewardPoints": 0,
       "FirstName": "Anonymous",
       "LastName": "Anonymous",
-      "CustomerID": "00000000-0000-0000-0000-000000000000"
     },
     "404-444-5555": {
       "Phone": "404-444-5555",
       "RewardPoints": 0,
       "FirstName": "John",
       "LastName": "Johnson",
-      "CustomerID": "11d89dc1-8a51-41f4-801b-8b5ffc88dc44"
     },
     "678-101-1234": {
       "Phone": "404-444-5555",
       "RewardPoints": 114,
       "FirstName": "Steve",
       "LastName": "Smith",
-      "CustomerID": "08f1f677-dc59-4eac-9b15-cb9a7b3fa347"
     },
     "123-456-7890": {
       "Phone": "123-456-7890",
       "RewardPoints": 999,
       "FirstName": "Joe",
       "LastName": "Joseph",
-      "CustomerID": "929e8dc7-fa49-4a49-9ac8-7a9c987b1020"
     }
   }
 }
