@@ -35,9 +35,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(188, 34);
+            this.btnClose.Location = new System.Drawing.Point(164, 26);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(94, 29);
+            this.btnClose.Size = new System.Drawing.Size(82, 22);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -46,36 +47,34 @@
             // txtDeleteThis
             // 
             this.txtDeleteThis.AcceptsReturn = true;
-            this.txtDeleteThis.Location = new System.Drawing.Point(188, 110);
+            this.txtDeleteThis.Location = new System.Drawing.Point(164, 82);
+            this.txtDeleteThis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDeleteThis.Multiline = true;
             this.txtDeleteThis.Name = "txtDeleteThis";
-            this.txtDeleteThis.Size = new System.Drawing.Size(550, 100);
+            this.txtDeleteThis.Size = new System.Drawing.Size(482, 76);
             this.txtDeleteThis.TabIndex = 1;
             // 
             // lblRemoveThis
             // 
             this.lblRemoveThis.AutoSize = true;
-            this.lblRemoveThis.Location = new System.Drawing.Point(188, 87);
+            this.lblRemoveThis.Location = new System.Drawing.Point(164, 65);
             this.lblRemoveThis.Name = "lblRemoveThis";
-            this.lblRemoveThis.Size = new System.Drawing.Size(177, 20);
+            this.lblRemoveThis.Size = new System.Drawing.Size(140, 15);
             this.lblRemoveThis.TabIndex = 2;
             this.lblRemoveThis.Text = "Demo - Remove This Box";
             // 
             // FormManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 721);
-            this.ControlBox = false;
             this.Controls.Add(this.lblRemoveThis);
             this.Controls.Add(this.txtDeleteThis);
             this.Controls.Add(this.btnClose);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormManagement";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormManagement";
-            this.Load += new System.EventHandler(this.OnLoad);
+            this.Load += new System.EventHandler(this.OnLoadFormManagement);
             this.ResumeLayout(false);
             this.PerformLayout();
 

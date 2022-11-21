@@ -4,25 +4,33 @@ namespace CoffeePointOfSale.Forms.Base;
 
 public class FormNoCloseBase : FormBase
 {
+    //https://stackoverflow.com/a/7301828
+    private const int CP_NOCLOSE_BUTTON = 0x200;
+
     public FormNoCloseBase()
     {
         //this constructor is ONLY for design time layout. Do NOT put anything else here.
+        HideControlBox();
     }
 
     public FormNoCloseBase(IAppSettings appSettings) : base(appSettings)
     {
-        InitializeComponent();
-        ControlBox = false; //hide min max close X
+        HideControlBox();
     }
 
-    //https://stackoverflow.com/a/7301828
-    private const int CP_NOCLOSE_BUTTON = 0x200;
+    private void HideControlBox()
+    {
+        this.ControlBox = false;
+        this.MaximizeBox = false;
+        this.MinimizeBox = false;
+    }
+
     protected override CreateParams CreateParams
     {
         get
         {
             var controlParams = base.CreateParams;
-            controlParams.ClassStyle |= CP_NOCLOSE_BUTTON ;
+            controlParams.ClassStyle |= CP_NOCLOSE_BUTTON;
             return controlParams;
         }
     }
@@ -33,10 +41,13 @@ public class FormNoCloseBase : FormBase
             // 
             // FormNoCloseBase
             // 
-
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.ClientSize = new System.Drawing.Size(1348, 721);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.ControlBox = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormNoCloseBase";
+            this.Text = "App AnonymousCustomerId Not Set";
             this.ResumeLayout(false);
 
     }
