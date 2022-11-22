@@ -23,5 +23,16 @@ namespace CoffeePointOfSale.Forms
             _customerService = customerService;
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e) //Return to Main Menu
+        {
+            Close(); //closes this form
+            FormFactory.Get<FormMain>().Show(); //re-opens the main form
+        }
+
+        private void button2_Click(object sender, EventArgs e) //Opens formAddCustomer
+        {
+
+        }
     }
 }
