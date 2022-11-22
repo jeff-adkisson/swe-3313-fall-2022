@@ -33,10 +33,10 @@ sealed partial class FormMain
             // 
             // btnManagement
             // 
-            this.btnManagement.Location = new System.Drawing.Point(46, 40);
-            this.btnManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnManagement.Location = new System.Drawing.Point(66, 67);
+            this.btnManagement.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnManagement.Name = "btnManagement";
-            this.btnManagement.Size = new System.Drawing.Size(140, 22);
+            this.btnManagement.Size = new System.Drawing.Size(200, 37);
             this.btnManagement.TabIndex = 0;
             this.btnManagement.Text = "Management";
             this.btnManagement.UseVisualStyleBackColor = true;
@@ -44,11 +44,11 @@ sealed partial class FormMain
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1326, 665);
             this.Controls.Add(this.btnManagement);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormMain";
