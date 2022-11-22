@@ -1,3 +1,8 @@
+
+# UI Prototype
+To access the UI prototype, use the following link:
+[Marvel Prototype](https://marvelapp.com/prototype/82jeda9/screen/89285369 "Marvel Prototype")
+
 You will create a [high-fidelity prototype](https://blog.prototypr.io/high-fidelity-prototyping-what-when-why-and-how-f5bbde6a7fd4) for the UI of the Coffee Shop application *and* record a short presentation to your customer demonstrating the prototype.
 
 ## HIGH-FIDELITY PROTOTYPE:
