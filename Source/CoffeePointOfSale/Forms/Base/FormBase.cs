@@ -2,7 +2,7 @@ using CoffeePointOfSale.Configuration;
 
 namespace CoffeePointOfSale.Forms.Base;
 
-public class FormBase : Form
+public class FormBase : System.Windows.Forms.Form
 {
     public FormBase()
     {
