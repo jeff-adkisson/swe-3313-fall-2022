@@ -35,6 +35,7 @@ sealed partial class FormMain
             // 
             // btnManagement
             // 
+
             this.btnManagement.Location = new System.Drawing.Point(574, 550);
             this.btnManagement.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnManagement.Name = "btnManagement";
