@@ -21,4 +21,21 @@ public partial class FormMain : FormBase
     {
         Application.Exit();
     }
+
+    private void FormMain_Load(object sender, EventArgs e)
+    {
+
+    }
+
+    private void bOrderDrink_Click(object sender, EventArgs e)
+    {
+        Hide();
+        FormFactory.Get<FormOrderDrink>().Show();
+    }
+
+    private void bCustList_Click(object sender, EventArgs e)
+    {
+        Hide();
+        FormFactory.Get<FormCustomerList>().Show();
+    }
 }

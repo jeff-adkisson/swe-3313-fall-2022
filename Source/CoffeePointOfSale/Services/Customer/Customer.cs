@@ -6,10 +6,29 @@ public class Customer
 {
     public const string AnonymousCustomerId = "anonymous";
 
-
+    private string _firstName = "";
+    private string _lastName = "";
     private string _phone = ""; //backing field for Phone property. only needed because the setter has logic to handle nulls and trimming spaces.
     private int _rewardPoints;
 
+    public virtual string FirstName
+    {
+        get => _firstName;
+        set
+        {
+            if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("First Name cannot be empty or null");
+            _firstName = value.Trim();
+        }
+    }
+    public virtual string LastName
+    {
+        get => _lastName;
+        set
+        {
+            if (string.IsNullOrWhiteSpace(value)) throw new ArgumentException("Last Name cannot be empty or null");
+            _lastName = value.Trim();
+        }
+    }
     public virtual string Phone
     {
         get => _phone;
@@ -38,6 +57,6 @@ public class Customer
     {
         return IsAnonymous  
             ? "Anonymous Customer - No Reward Points"
-            : $"{Phone}, Reward Points: {RewardPoints}";
+            : $"{FirstName} {LastName}, {Phone}, Reward Points: {RewardPoints}";
     }
 }

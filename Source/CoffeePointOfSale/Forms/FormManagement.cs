@@ -40,4 +40,9 @@ public partial class FormManagement : FormNoCloseBase
     {
         DemonstrateGettingCustomerList();
     }
+
+    private void txtDeleteThis_TextChanged(object sender, EventArgs e)
+    {
+
+    }
 }

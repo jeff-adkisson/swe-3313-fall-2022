@@ -53,6 +53,7 @@
             this.txtDeleteThis.Name = "txtDeleteThis";
             this.txtDeleteThis.Size = new System.Drawing.Size(482, 76);
             this.txtDeleteThis.TabIndex = 1;
+            this.txtDeleteThis.TextChanged += new System.EventHandler(this.txtDeleteThis_TextChanged);
             // 
             // lblRemoveThis
             // 

@@ -29,24 +29,58 @@ sealed partial class FormMain
     private void InitializeComponent()
     {
             this.btnManagement = new System.Windows.Forms.Button();
+            this.bCustList = new System.Windows.Forms.Button();
+            this.bOrderDrink = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnManagement
             // 
-            this.btnManagement.Location = new System.Drawing.Point(46, 40);
+            this.btnManagement.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnManagement.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnManagement.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnManagement.ForeColor = System.Drawing.Color.Transparent;
+            this.btnManagement.Location = new System.Drawing.Point(504, 468);
             this.btnManagement.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnManagement.Name = "btnManagement";
-            this.btnManagement.Size = new System.Drawing.Size(140, 22);
+            this.btnManagement.Size = new System.Drawing.Size(370, 158);
             this.btnManagement.TabIndex = 0;
             this.btnManagement.Text = "Management";
-            this.btnManagement.UseVisualStyleBackColor = true;
+            this.btnManagement.UseVisualStyleBackColor = false;
             this.btnManagement.Click += new System.EventHandler(this.OnClickBtnManagement);
+            // 
+            // bCustList
+            // 
+            this.bCustList.BackColor = System.Drawing.Color.SteelBlue;
+            this.bCustList.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bCustList.ForeColor = System.Drawing.Color.Transparent;
+            this.bCustList.Location = new System.Drawing.Point(504, 235);
+            this.bCustList.Name = "bCustList";
+            this.bCustList.Size = new System.Drawing.Size(370, 158);
+            this.bCustList.TabIndex = 1;
+            this.bCustList.Text = "Customer List";
+            this.bCustList.UseVisualStyleBackColor = false;
+            this.bCustList.Click += new System.EventHandler(this.bCustList_Click);
+            // 
+            // bOrderDrink
+            // 
+            this.bOrderDrink.BackColor = System.Drawing.Color.SteelBlue;
+            this.bOrderDrink.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.bOrderDrink.ForeColor = System.Drawing.Color.Transparent;
+            this.bOrderDrink.Location = new System.Drawing.Point(504, 12);
+            this.bOrderDrink.Name = "bOrderDrink";
+            this.bOrderDrink.Size = new System.Drawing.Size(370, 158);
+            this.bOrderDrink.TabIndex = 2;
+            this.bOrderDrink.Text = "Order Drink";
+            this.bOrderDrink.UseVisualStyleBackColor = false;
+            this.bOrderDrink.Click += new System.EventHandler(this.bOrderDrink_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1348, 634);
+            this.Controls.Add(this.bOrderDrink);
+            this.Controls.Add(this.bCustList);
             this.Controls.Add(this.btnManagement);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
@@ -54,6 +88,7 @@ sealed partial class FormMain
             this.Name = "FormMain";
             this.Text = "Form";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormMainClosed);
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
 
     }
@@ -61,4 +96,6 @@ sealed partial class FormMain
     #endregion
 
     private Button btnManagement;
+    private Button bCustList;
+    public Button bOrderDrink;
 }
