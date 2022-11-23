@@ -7,12 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeePointOfSale", "Coffee
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{85B8FAE1-0634-40E2-9EB0-966EFEA6336D}"
 	ProjectSection(SolutionItems) = preProject
-		..\README.md = ..\README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0_GettingStarted", "0_GettingStarted", "{7880123D-28F9-4FCD-8CB0-304521851FE1}"
-	ProjectSection(SolutionItems) = preProject
-		..\Documentation\0_GettingStarted\README.md = ..\Documentation\0_GettingStarted\README.md
+		readme.md = readme.md
 	EndProjectSection
 EndProject
 Global
@@ -28,9 +23,6 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{7880123D-28F9-4FCD-8CB0-304521851FE1} = {85B8FAE1-0634-40E2-9EB0-966EFEA6336D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E9647FA-CD78-4EB8-AB8A-AA07DC1152EC}

@@ -10,6 +10,6 @@ public class DrinkMenuService : IDrinkMenuService
     public DrinkMenuService(IStorageService storageService)
     {
         _storageService = storageService;
-        //your menu json to load on start will go in the JsonStorage directory
+        //your DrinkMenu.json to load on start will go in the JsonStorage directory
     }
 }

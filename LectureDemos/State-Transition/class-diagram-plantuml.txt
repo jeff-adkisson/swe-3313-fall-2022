@@ -1,0 +1,79 @@
+'https://www.plantuml.com/plantuml/uml/bLJRZjGm37tlLqJYfSFI_O0AeOMkaFQ1YrX-mBJU4f4weyILWA7_JffCwq2BHETfV8vzV1AxkVCCZiV15CKPsc_GesgCHc9rAPHg3NYlFZhREnZKHGL8gNUWgJo5lrCn5LBs2NljsG5hIuyCZ44XvYEDW_hiWBoUkIYSVX_EI2_Mw7NNFVBO8R5WZR4Uin2eHHF3AOadXuqbnk-SIT-eu4LJ7wZHUSnmJJo3n1dsa0mtetD878ELpTBkRIddE6L4ynMenrXN9grJRZAqHFS4BIwD5fyN-39VMSlJHbkgbvphMQF26_11HRmzMwwW44WoookPM_wlrbd71meq6FqJ_XhYpHw_r_7FDkAzKcijfccL9o7Zakp0QHM4s3KzrsPE1JpcJpRpk8MKPB3RN9bGnzoyjwoVVgJF3HqkrhnOs7WmrcyD9FnezxUQqgGEZ6HP-qg9Q8w__7Lxc-rrf2HyNgtBdHDpMLNjBkTEdep-dwHCQZz5Bd9-zwwFObtFpw6ggbUBoRg-jyKTKZSEvZS0
+
+@startuml
+package Client {
+  class Program { 
+    Main()
+  }
+}
+
+
+package RegistrationState {
+
+    enum Transition {
+        Open,
+        AddStudent,
+        Close,
+        Cancel
+    }
+
+    class Context {
+        + string Course
+        + int Count
+        + IState CurrentState
+        
+        + Do(Transition)
+        + ChangeState(IState)
+    }
+
+    interface IState {
+      {abstract} Do(Transition)
+    }
+
+    abstract class StateBase { 
+        # Context
+
+        # StateBase(Context)
+        + {abstract} Do(Transition)
+    }
+
+    class StateInitialization {
+        + StateInitialization(Context)
+        + Do(Transition) 
+        - InitializeCourse()
+        - OpenCourse()
+        - CancelCourse()
+    }
+
+    class StateOpen{
+        + StateOpen(Context)
+        + Do(Transition) 
+        - AddStudent()
+        - CancelCourse()
+    }
+
+    class StateCancelled {
+        + StateCancelled(Context)
+        + Do(Transition) 
+        - NotifyRegisteredStudents()
+    }
+
+
+    class StateClosed {
+        + StateClosed(Context)
+        + Do(Transition) 
+        - FinalizeCourse()
+        - CancelCourse()
+    }
+
+    IState - Transition
+    IState <|.. StateBase 
+    StateBase *- Context
+    StateBase <|-- StateInitialization 
+    StateBase <|-- StateOpen
+    StateBase <|-- StateCancelled 
+    StateBase <|-- StateClosed 
+}
+
+Program::Main --> Context::Do
+@enduml
