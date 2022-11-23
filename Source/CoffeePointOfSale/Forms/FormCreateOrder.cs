@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeePointOfSale.Services.FormFactory;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace CoffeePointOfSale.Forms.Base
 {
     public partial class FormCreateOrder : Base.FormNoCloseBase
     {
+
         public FormCreateOrder()
         {
             InitializeComponent();
@@ -41,7 +43,7 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox2.Checked)
             {
-                Cl2.Text = checkBox2.Text;
+                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox2.Text;
             }
             else
             {
@@ -69,7 +71,7 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox1.Checked)
             {
-                Cl1.Text = checkBox1.Text;
+                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox1.Text;
             }
             else
             {
@@ -86,7 +88,7 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox3.Checked)
             {
-                Cl3.Text = checkBox3.Text;
+                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox3.Text;
             }
             else
             {
@@ -98,7 +100,7 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox4.Checked)
             {
-                Cl4.Text = checkBox4.Text;
+                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox4.Text;
             }
             else
             {
@@ -111,7 +113,7 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox5.Checked)
             {
-                Cl5.Text = checkBox5.Text;
+                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox5.Text;
             }
             else
             {
@@ -123,7 +125,7 @@ namespace CoffeePointOfSale.Forms.Base
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox6.Checked) {
-                Cl6.Text = checkBox6.Text;
+                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox6.Text;
             }
             else
             {
@@ -132,6 +134,17 @@ namespace CoffeePointOfSale.Forms.Base
             }
             
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Cl1.Text = "";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Hide();
+            FormFactory.Get<FormPayment>().Show();
         }
     }
 }

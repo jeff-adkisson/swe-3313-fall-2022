@@ -47,7 +47,7 @@ public class FormNoCloseBase : FormBase
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormNoCloseBase";
-            this.Text = "App AnonymousCustomerId Not Set";
+            this.Text = "NoCloseBase";
             this.ResumeLayout(false);
 
     }
