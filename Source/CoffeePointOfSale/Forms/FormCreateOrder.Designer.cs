@@ -68,7 +68,8 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(4, 2);
+            this.splitContainer1.Location = new System.Drawing.Point(5, 3);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -89,16 +90,17 @@
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
-            this.splitContainer1.Size = new System.Drawing.Size(1364, 760);
-            this.splitContainer1.SplitterDistance = 789;
+            this.splitContainer1.Size = new System.Drawing.Size(1559, 1013);
+            this.splitContainer1.SplitterDistance = 901;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 2;
             // 
             // Cl1
             // 
             this.Cl1.AutoSize = true;
-            this.Cl1.Location = new System.Drawing.Point(111, 510);
+            this.Cl1.Location = new System.Drawing.Point(127, 680);
             this.Cl1.Name = "Cl1";
-            this.Cl1.Size = new System.Drawing.Size(0, 15);
+            this.Cl1.Size = new System.Drawing.Size(0, 20);
             this.Cl1.TabIndex = 12;
             this.Cl1.Click += new System.EventHandler(this.Customization_Click);
             // 
@@ -106,9 +108,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(0, 417);
+            this.label4.Location = new System.Drawing.Point(0, 556);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1220, 28);
+            this.label4.Size = new System.Drawing.Size(1525, 35);
             this.label4.TabIndex = 10;
             this.label4.Text = "_________________________________________________________________________________" +
     "______________________________________________________________________\r\n";
@@ -116,6 +118,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Hide();
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.Whippedm);
             this.groupBox1.Controls.Add(this.Whippedp);
@@ -135,18 +138,21 @@
             this.groupBox1.Controls.Add(this.checkBox4);
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Location = new System.Drawing.Point(351, 44);
+            this.groupBox1.Location = new System.Drawing.Point(401, 59);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(264, 233);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(302, 311);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Whippedm
             // 
-            this.Whippedm.Location = new System.Drawing.Point(204, 27);
+            this.Whippedm.Location = new System.Drawing.Point(233, 36);
+            this.Whippedm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Whippedm.Name = "Whippedm";
-            this.Whippedm.Size = new System.Drawing.Size(36, 22);
+            this.Whippedm.Size = new System.Drawing.Size(41, 29);
             this.Whippedm.TabIndex = 16;
             this.Whippedm.Text = "-";
             this.Whippedm.UseVisualStyleBackColor = true;
@@ -154,9 +160,10 @@
             // 
             // Whippedp
             // 
-            this.Whippedp.Location = new System.Drawing.Point(162, 27);
+            this.Whippedp.Location = new System.Drawing.Point(185, 36);
+            this.Whippedp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Whippedp.Name = "Whippedp";
-            this.Whippedp.Size = new System.Drawing.Size(36, 22);
+            this.Whippedp.Size = new System.Drawing.Size(41, 29);
             this.Whippedp.TabIndex = 15;
             this.Whippedp.Text = "+";
             this.Whippedp.UseVisualStyleBackColor = true;
@@ -164,18 +171,20 @@
             // 
             // Shotm
             // 
-            this.Shotm.Location = new System.Drawing.Point(204, 55);
+            this.Shotm.Location = new System.Drawing.Point(233, 73);
+            this.Shotm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Shotm.Name = "Shotm";
-            this.Shotm.Size = new System.Drawing.Size(36, 22);
+            this.Shotm.Size = new System.Drawing.Size(41, 29);
             this.Shotm.TabIndex = 16;
             this.Shotm.Text = "-";
             this.Shotm.UseVisualStyleBackColor = true;
             // 
             // Shotp
             // 
-            this.Shotp.Location = new System.Drawing.Point(162, 55);
+            this.Shotp.Location = new System.Drawing.Point(185, 73);
+            this.Shotp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Shotp.Name = "Shotp";
-            this.Shotp.Size = new System.Drawing.Size(36, 22);
+            this.Shotp.Size = new System.Drawing.Size(41, 29);
             this.Shotp.TabIndex = 15;
             this.Shotp.Text = "+";
             this.Shotp.UseVisualStyleBackColor = true;
@@ -183,18 +192,20 @@
             // 
             // SVm
             // 
-            this.SVm.Location = new System.Drawing.Point(204, 84);
+            this.SVm.Location = new System.Drawing.Point(233, 112);
+            this.SVm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SVm.Name = "SVm";
-            this.SVm.Size = new System.Drawing.Size(36, 22);
+            this.SVm.Size = new System.Drawing.Size(41, 29);
             this.SVm.TabIndex = 16;
             this.SVm.Text = "-";
             this.SVm.UseVisualStyleBackColor = true;
             // 
             // SVp
             // 
-            this.SVp.Location = new System.Drawing.Point(162, 84);
+            this.SVp.Location = new System.Drawing.Point(185, 112);
+            this.SVp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SVp.Name = "SVp";
-            this.SVp.Size = new System.Drawing.Size(36, 22);
+            this.SVp.Size = new System.Drawing.Size(41, 29);
             this.SVp.TabIndex = 15;
             this.SVp.Text = "+";
             this.SVp.UseVisualStyleBackColor = true;
@@ -202,9 +213,10 @@
             // 
             // Icem
             // 
-            this.Icem.Location = new System.Drawing.Point(204, 112);
+            this.Icem.Location = new System.Drawing.Point(233, 149);
+            this.Icem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Icem.Name = "Icem";
-            this.Icem.Size = new System.Drawing.Size(36, 22);
+            this.Icem.Size = new System.Drawing.Size(41, 29);
             this.Icem.TabIndex = 16;
             this.Icem.Text = "-";
             this.Icem.UseVisualStyleBackColor = true;
@@ -212,9 +224,10 @@
             // 
             // Milkm
             // 
-            this.Milkm.Location = new System.Drawing.Point(204, 140);
+            this.Milkm.Location = new System.Drawing.Point(233, 187);
+            this.Milkm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Milkm.Name = "Milkm";
-            this.Milkm.Size = new System.Drawing.Size(36, 22);
+            this.Milkm.Size = new System.Drawing.Size(41, 29);
             this.Milkm.TabIndex = 20;
             this.Milkm.Text = "-";
             this.Milkm.UseVisualStyleBackColor = true;
@@ -222,9 +235,10 @@
             // 
             // Icep
             // 
-            this.Icep.Location = new System.Drawing.Point(162, 112);
+            this.Icep.Location = new System.Drawing.Point(185, 149);
+            this.Icep.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Icep.Name = "Icep";
-            this.Icep.Size = new System.Drawing.Size(36, 22);
+            this.Icep.Size = new System.Drawing.Size(41, 29);
             this.Icep.TabIndex = 15;
             this.Icep.Text = "+";
             this.Icep.UseVisualStyleBackColor = true;
@@ -232,9 +246,10 @@
             // 
             // Milkp
             // 
-            this.Milkp.Location = new System.Drawing.Point(162, 140);
+            this.Milkp.Location = new System.Drawing.Point(185, 187);
+            this.Milkp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Milkp.Name = "Milkp";
-            this.Milkp.Size = new System.Drawing.Size(36, 22);
+            this.Milkp.Size = new System.Drawing.Size(41, 29);
             this.Milkp.TabIndex = 19;
             this.Milkp.Text = "+";
             this.Milkp.UseVisualStyleBackColor = true;
@@ -242,9 +257,10 @@
             // 
             // Almondm
             // 
-            this.Almondm.Location = new System.Drawing.Point(204, 171);
+            this.Almondm.Location = new System.Drawing.Point(233, 228);
+            this.Almondm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Almondm.Name = "Almondm";
-            this.Almondm.Size = new System.Drawing.Size(36, 22);
+            this.Almondm.Size = new System.Drawing.Size(41, 29);
             this.Almondm.TabIndex = 14;
             this.Almondm.Text = "-";
             this.Almondm.UseVisualStyleBackColor = true;
@@ -252,9 +268,10 @@
             // 
             // Almondp
             // 
-            this.Almondp.Location = new System.Drawing.Point(162, 171);
+            this.Almondp.Location = new System.Drawing.Point(185, 228);
+            this.Almondp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Almondp.Name = "Almondp";
-            this.Almondp.Size = new System.Drawing.Size(36, 22);
+            this.Almondp.Size = new System.Drawing.Size(41, 29);
             this.Almondp.TabIndex = 13;
             this.Almondp.Text = "+";
             this.Almondp.UseVisualStyleBackColor = true;
@@ -263,9 +280,10 @@
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(6, 174);
+            this.checkBox6.Location = new System.Drawing.Point(7, 232);
+            this.checkBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(137, 19);
+            this.checkBox6.Size = new System.Drawing.Size(170, 24);
             this.checkBox6.TabIndex = 10;
             this.checkBox6.Text = "Almond Cream $0.49";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -274,9 +292,10 @@
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(6, 149);
+            this.checkBox5.Location = new System.Drawing.Point(7, 199);
+            this.checkBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(79, 19);
+            this.checkBox5.Size = new System.Drawing.Size(98, 24);
             this.checkBox5.TabIndex = 9;
             this.checkBox5.Text = "Milk $0.99";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -285,9 +304,10 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 30);
+            this.checkBox1.Location = new System.Drawing.Point(7, 40);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(122, 19);
+            this.checkBox1.Size = new System.Drawing.Size(152, 24);
             this.checkBox1.TabIndex = 5;
             this.checkBox1.Text = "Whip Cream $0.49";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -296,9 +316,10 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(7, 115);
+            this.checkBox4.Location = new System.Drawing.Point(8, 153);
+            this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(78, 19);
+            this.checkBox4.Size = new System.Drawing.Size(98, 24);
             this.checkBox4.TabIndex = 8;
             this.checkBox4.Text = "Iced $1.49";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -307,9 +328,10 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 62);
+            this.checkBox2.Location = new System.Drawing.Point(7, 83);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(129, 19);
+            this.checkBox2.Size = new System.Drawing.Size(162, 24);
             this.checkBox2.TabIndex = 6;
             this.checkBox2.Text = "Shot Expresso $0.99";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -318,9 +340,10 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 87);
+            this.checkBox3.Location = new System.Drawing.Point(7, 116);
+            this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(117, 19);
+            this.checkBox3.Size = new System.Drawing.Size(148, 24);
             this.checkBox3.TabIndex = 7;
             this.checkBox3.Text = "Shot Vanilla $0.99";
             this.checkBox3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -330,9 +353,10 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(95)))), ((int)(((byte)(98)))));
-            this.button3.Location = new System.Drawing.Point(646, 682);
+            this.button3.Location = new System.Drawing.Point(738, 909);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 26);
+            this.button3.Size = new System.Drawing.Size(107, 35);
             this.button3.TabIndex = 2;
             this.button3.Text = "Clear";
             this.button3.UseVisualStyleBackColor = false;
@@ -340,9 +364,10 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(211)))), ((int)(((byte)(83)))));
-            this.button2.Location = new System.Drawing.Point(304, 651);
+            this.button2.Location = new System.Drawing.Point(347, 868);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(168, 38);
+            this.button2.Size = new System.Drawing.Size(192, 51);
             this.button2.TabIndex = 1;
             this.button2.Text = "Add Drink to Order";
             this.button2.UseVisualStyleBackColor = false;
@@ -357,18 +382,20 @@
             "Chai Latte",
             "Frappuccino",
             "Iced Machiato"});
-            this.comboBox1.Location = new System.Drawing.Point(23, 44);
+            this.comboBox1.Location = new System.Drawing.Point(26, 59);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(232, 43);
+            this.comboBox1.Size = new System.Drawing.Size(265, 50);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(95)))), ((int)(((byte)(98)))));
-            this.button4.Location = new System.Drawing.Point(444, 682);
+            this.button4.Location = new System.Drawing.Point(507, 909);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(94, 26);
+            this.button4.Size = new System.Drawing.Size(107, 35);
             this.button4.TabIndex = 18;
             this.button4.Text = "Clear";
             this.button4.UseVisualStyleBackColor = false;
@@ -377,9 +404,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(251, 506);
+            this.label3.Location = new System.Drawing.Point(287, 675);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 19);
+            this.label3.Size = new System.Drawing.Size(127, 23);
             this.label3.TabIndex = 3;
             this.label3.Text = "Order Subtotal:";
             // 
@@ -387,9 +414,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(282, 539);
+            this.label2.Location = new System.Drawing.Point(322, 719);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 19);
+            this.label2.Size = new System.Drawing.Size(38, 23);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tax:";
             // 
@@ -397,9 +424,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(248, 567);
+            this.label1.Location = new System.Drawing.Point(283, 756);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 28);
+            this.label1.Size = new System.Drawing.Size(145, 35);
             this.label1.TabIndex = 1;
             this.label1.Text = "Order Total:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -407,9 +434,10 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(211)))), ((int)(((byte)(83)))));
-            this.button1.Location = new System.Drawing.Point(229, 651);
+            this.button1.Location = new System.Drawing.Point(262, 868);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 38);
+            this.button1.Size = new System.Drawing.Size(192, 51);
             this.button1.TabIndex = 0;
             this.button1.Text = "Finalize Order";
             this.button1.UseVisualStyleBackColor = false;
@@ -419,20 +447,21 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(-7, 0);
+            this.label5.Location = new System.Drawing.Point(-8, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(203, 45);
+            this.label5.Size = new System.Drawing.Size(252, 54);
             this.label5.TabIndex = 11;
             this.label5.Text = "Create Order";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // FormCreateOrder
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(151)))), ((int)(((byte)(126)))));
+            this.ClientSize = new System.Drawing.Size(1541, 961);
             this.Controls.Add(this.splitContainer1);
-            this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.Name = "FormCreateOrder";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormCreateOrder_Load);
