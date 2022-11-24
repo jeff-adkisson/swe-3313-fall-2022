@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.Cl6 = new System.Windows.Forms.Label();
-            this.Cl5 = new System.Windows.Forms.Label();
-            this.Cl4 = new System.Windows.Forms.Label();
-            this.Cl3 = new System.Windows.Forms.Label();
-            this.Cl2 = new System.Windows.Forms.Label();
             this.Cl1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -55,7 +50,6 @@
             this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.Order = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -79,15 +73,9 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.Cl6);
-            this.splitContainer1.Panel1.Controls.Add(this.Cl5);
-            this.splitContainer1.Panel1.Controls.Add(this.Cl4);
-            this.splitContainer1.Panel1.Controls.Add(this.Cl3);
-            this.splitContainer1.Panel1.Controls.Add(this.Cl2);
             this.splitContainer1.Panel1.Controls.Add(this.Cl1);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.Order);
             this.splitContainer1.Panel1.Controls.Add(this.button3);
             this.splitContainer1.Panel1.Controls.Add(this.button2);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
@@ -102,48 +90,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Size = new System.Drawing.Size(1364, 760);
-            this.splitContainer1.SplitterDistance = 790;
+            this.splitContainer1.SplitterDistance = 789;
             this.splitContainer1.TabIndex = 2;
-            // 
-            // Cl6
-            // 
-            this.Cl6.AutoSize = true;
-            this.Cl6.Location = new System.Drawing.Point(111, 642);
-            this.Cl6.Name = "Cl6";
-            this.Cl6.Size = new System.Drawing.Size(0, 15);
-            this.Cl6.TabIndex = 17;
-            // 
-            // Cl5
-            // 
-            this.Cl5.AutoSize = true;
-            this.Cl5.Location = new System.Drawing.Point(111, 618);
-            this.Cl5.Name = "Cl5";
-            this.Cl5.Size = new System.Drawing.Size(0, 15);
-            this.Cl5.TabIndex = 16;
-            // 
-            // Cl4
-            // 
-            this.Cl4.AutoSize = true;
-            this.Cl4.Location = new System.Drawing.Point(111, 594);
-            this.Cl4.Name = "Cl4";
-            this.Cl4.Size = new System.Drawing.Size(0, 15);
-            this.Cl4.TabIndex = 15;
-            // 
-            // Cl3
-            // 
-            this.Cl3.AutoSize = true;
-            this.Cl3.Location = new System.Drawing.Point(111, 567);
-            this.Cl3.Name = "Cl3";
-            this.Cl3.Size = new System.Drawing.Size(0, 15);
-            this.Cl3.TabIndex = 14;
-            // 
-            // Cl2
-            // 
-            this.Cl2.AutoSize = true;
-            this.Cl2.Location = new System.Drawing.Point(111, 539);
-            this.Cl2.Name = "Cl2";
-            this.Cl2.Size = new System.Drawing.Size(0, 15);
-            this.Cl2.TabIndex = 13;
             // 
             // Cl1
             // 
@@ -168,6 +116,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.Whippedm);
             this.groupBox1.Controls.Add(this.Whippedp);
             this.groupBox1.Controls.Add(this.Shotm);
@@ -191,7 +140,6 @@
             this.groupBox1.Size = new System.Drawing.Size(264, 233);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Customizations";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Whippedm
@@ -202,6 +150,7 @@
             this.Whippedm.TabIndex = 16;
             this.Whippedm.Text = "-";
             this.Whippedm.UseVisualStyleBackColor = true;
+            this.Whippedm.Click += new System.EventHandler(this.Whippedm_Click);
             // 
             // Whippedp
             // 
@@ -211,6 +160,7 @@
             this.Whippedp.TabIndex = 15;
             this.Whippedp.Text = "+";
             this.Whippedp.UseVisualStyleBackColor = true;
+            this.Whippedp.Click += new System.EventHandler(this.Whippedp_Click);
             // 
             // Shotm
             // 
@@ -229,6 +179,7 @@
             this.Shotp.TabIndex = 15;
             this.Shotp.Text = "+";
             this.Shotp.UseVisualStyleBackColor = true;
+            this.Shotp.Click += new System.EventHandler(this.Shotp_Click);
             // 
             // SVm
             // 
@@ -247,6 +198,7 @@
             this.SVp.TabIndex = 15;
             this.SVp.Text = "+";
             this.SVp.UseVisualStyleBackColor = true;
+            this.SVp.Click += new System.EventHandler(this.SVp_Click);
             // 
             // Icem
             // 
@@ -256,6 +208,7 @@
             this.Icem.TabIndex = 16;
             this.Icem.Text = "-";
             this.Icem.UseVisualStyleBackColor = true;
+            this.Icem.Click += new System.EventHandler(this.Icem_Click);
             // 
             // Milkm
             // 
@@ -265,6 +218,7 @@
             this.Milkm.TabIndex = 20;
             this.Milkm.Text = "-";
             this.Milkm.UseVisualStyleBackColor = true;
+            this.Milkm.Click += new System.EventHandler(this.Milkm_Click);
             // 
             // Icep
             // 
@@ -274,6 +228,7 @@
             this.Icep.TabIndex = 15;
             this.Icep.Text = "+";
             this.Icep.UseVisualStyleBackColor = true;
+            this.Icep.Click += new System.EventHandler(this.Icep_Click);
             // 
             // Milkp
             // 
@@ -283,6 +238,7 @@
             this.Milkp.TabIndex = 19;
             this.Milkp.Text = "+";
             this.Milkp.UseVisualStyleBackColor = true;
+            this.Milkp.Click += new System.EventHandler(this.Milkp_Click);
             // 
             // Almondm
             // 
@@ -292,6 +248,7 @@
             this.Almondm.TabIndex = 14;
             this.Almondm.Text = "-";
             this.Almondm.UseVisualStyleBackColor = true;
+            this.Almondm.Click += new System.EventHandler(this.Almondm_Click);
             // 
             // Almondp
             // 
@@ -301,6 +258,7 @@
             this.Almondp.TabIndex = 13;
             this.Almondp.Text = "+";
             this.Almondp.UseVisualStyleBackColor = true;
+            this.Almondp.Click += new System.EventHandler(this.Almondp_Click);
             // 
             // checkBox6
             // 
@@ -368,14 +326,6 @@
             this.checkBox3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-            // 
-            // Order
-            // 
-            this.Order.AutoSize = true;
-            this.Order.Location = new System.Drawing.Point(55, 495);
-            this.Order.Name = "Order";
-            this.Order.Size = new System.Drawing.Size(0, 15);
-            this.Order.TabIndex = 3;
             // 
             // button3
             // 
@@ -481,7 +431,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(151)))), ((int)(((byte)(126)))));
-            this.ClientSize = new System.Drawing.Size(1348, 729);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "FormCreateOrder";
@@ -509,7 +458,6 @@
         private ComboBox comboBox1;
         private Button button3;
         private Button button2;
-        private Label Order;
         private CheckBox checkBox2;
         private CheckBox checkBox1;
         private CheckBox checkBox3;
@@ -531,12 +479,7 @@
         private Button Almondm;
         private Button Almondp;
         private Label label5;
-        private Label Cl1;
-        private Label Cl4;
-        private Label Cl3;
-        private Label Cl2;
-        private Label Cl5;
-        private Label Cl6;
         private Button button4;
+        private Label Cl1;
     }
 }

@@ -1,4 +1,5 @@
-﻿using CoffeePointOfSale.Services.FormFactory;
+﻿using CoffeePointOfSale.Configuration;
+using CoffeePointOfSale.Services.FormFactory;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,16 +9,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace CoffeePointOfSale.Forms.Base
 {
     public partial class FormCreateOrder : Base.FormNoCloseBase
     {
+        decimal subtotal = 0;
+        int whipped = 0;
+        int shotexpresso = 0;
+        int shotvanilla = 0;
+        int iced = 0;
+        int milked = 0;
+        int almond = 0;
 
-        public FormCreateOrder()
+       
+
+        private IAppSettings _appSettings;
+        
+        
+        public FormCreateOrder(IAppSettings appSettings)
         {
             InitializeComponent();
         }
+        
 
         private void FormCreateOrder_Load(object sender, EventArgs e)
         {
@@ -31,7 +46,9 @@ namespace CoffeePointOfSale.Forms.Base
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Order.Text= comboBox1.Text;
+            groupBox1.Show();
+            Cl1.Text= "1x"+comboBox1.Text;
+       
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -43,11 +60,11 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox2.Checked)
             {
-                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox2.Text;
+                Cl1.Text = Cl1.Text  + Environment.NewLine+ "   "+ checkBox2.Text;
             }
             else
             {
-                Cl2.Text = "";
+                Cl1.Text = "";
             }
 
         }
@@ -71,7 +88,7 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox1.Checked)
             {
-                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox1.Text;
+                Cl1.Text = Cl1.Text + Environment.NewLine+ "   "  +checkBox1.Text;
             }
             else
             {
@@ -88,11 +105,11 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox3.Checked)
             {
-                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox3.Text;
+                Cl1.Text = Cl1.Text  + Environment.NewLine + "   "+checkBox3.Text;
             }
             else
             {
-                Cl3.Text = "";
+                Cl1.Text = "";
             }
         }
 
@@ -100,11 +117,11 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox4.Checked)
             {
-                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox4.Text;
+                Cl1.Text = Cl1.Text +  Environment.NewLine + "   " + checkBox4.Text;
             }
             else
             {
-                Cl4.Text = "";
+                Cl1.Text = "";
             }
             
         }
@@ -113,11 +130,11 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox5.Checked)
             {
-                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox5.Text;
+                Cl1.Text = Cl1.Text  + Environment.NewLine + "   " + checkBox5.Text;
             }
             else
             {
-                Cl5.Text = "";
+                Cl1.Text = "";
             }
             
         }
@@ -125,11 +142,11 @@ namespace CoffeePointOfSale.Forms.Base
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox6.Checked) {
-                Cl1.Text = Cl1.Text + Environment.NewLine + checkBox6.Text;
+                Cl1.Text = Cl1.Text +  Environment.NewLine + "   " + checkBox6.Text;
             }
             else
             {
-                Cl6.Text = "";
+                Cl1.Text = "";
                 
             }
             
@@ -146,5 +163,65 @@ namespace CoffeePointOfSale.Forms.Base
             Hide();
             FormFactory.Get<FormPayment>().Show();
         }
+
+        private void Whippedp_Click(object sender, EventArgs e)
+        {
+            whipped++;
+        }
+
+        private void Whippedm_Click(object sender, EventArgs e)
+        {
+            whipped--;
+        }
+
+        private void Shotp_Click(object sender, EventArgs e)
+        {
+            shotexpresso++;
+        }
+        private void Shotm_Click(object sender, EventArgs e)
+        {
+            shotexpresso--;
+        }
+
+        private void SVp_Click(object sender, EventArgs e)
+        {
+            shotvanilla++;
+        }
+        private void SVm_Click(Object sender, EventArgs e)
+        {
+            shotvanilla--;
+        }
+
+        private void Icep_Click(object sender, EventArgs e)
+        {
+            iced++;
+        }
+
+        private void Icem_Click(object sender, EventArgs e)
+        {
+            iced--;
+        }
+
+        private void Milkp_Click(object sender, EventArgs e)
+        {
+            milked++;
+        }
+
+        private void Milkm_Click(object sender, EventArgs e)
+        {
+            milked--;
+        }
+
+        private void Almondp_Click(object sender, EventArgs e)
+        {
+            almond++;
+        }
+
+        private void Almondm_Click(object sender, EventArgs e)
+        {
+            almond--;
+        }
     }
+
+
 }
