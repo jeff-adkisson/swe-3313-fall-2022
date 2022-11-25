@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace CoffeePointOfSale.Services.Customer;
 
@@ -10,6 +11,9 @@ public class Customers
     [JsonProperty("Customers")]
     private readonly Dictionary<string, Customer> _customerDict = new();
 
+    //var options = new JsonSerializerOptions {  WriteIndented= true };
+    //string jsonString = JsonSerializer.Serialize(_customerDict, options);
+
     /// <summary>
     /// Returns a readonly list of all customers.
     /// </summary>
@@ -18,6 +22,11 @@ public class Customers
         _customerDict.Select(c => c.Value)
             .OrderBy(c => c.IsAnonymous ? 0 : 1)
             .ToList();
+
+    public void deserializeCustomersJson()
+    {
+
+    }
 
     /// <summary>
     /// Indexer to return a specific customer by phone.
