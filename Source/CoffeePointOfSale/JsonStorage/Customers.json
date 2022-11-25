@@ -1,12 +1,32 @@
 {
   "Customers": {
     "anonymous": {
+      "CID": 0,
+      "firstName": "anonymous",
+      "lastName": "anonymous",
       "Phone": "anonymous",
       "RewardPoints": 0
     },
     "404-444-5555": {
+      "CID": 1,
+      "firstName": "Test",
+      "lastName": "Testor",
       "Phone": "404-444-5555",
       "RewardPoints": 95
+    },
+    "404-678-6795": {
+      "CID": 2,
+      "firstName": "Chevy",
+      "lastName": "Chase",
+      "Phone": "404-678-6795",
+      "RewardPoints": 95
+    },
+    "911-483-7241": {
+      "CID": 3,
+      "firstName": "Kim",
+      "lastName": "Petras",
+      "Phone": "911-483-7241",
+      "RewardPoints": 200
     }
   }
 }
