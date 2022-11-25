@@ -28,6 +28,11 @@ public class Customers
 
     }
 
+    public IReadOnlyList<Customer> GetListOfCustomers()
+    {
+        return List;
+    }
+
     /// <summary>
     /// Indexer to return a specific customer by phone.
     /// </summary>
