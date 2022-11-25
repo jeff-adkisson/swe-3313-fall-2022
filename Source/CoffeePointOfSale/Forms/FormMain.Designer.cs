@@ -35,7 +35,6 @@ sealed partial class FormMain
             // 
             // btnManagement
             // 
-
             this.btnManagement.Location = new System.Drawing.Point(574, 550);
             this.btnManagement.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnManagement.Name = "btnManagement";
@@ -53,6 +52,7 @@ sealed partial class FormMain
             this.btncustomerlist.TabIndex = 1;
             this.btncustomerlist.Text = "Customer List";
             this.btncustomerlist.UseVisualStyleBackColor = true;
+            this.btncustomerlist.Click += new System.EventHandler(this.btncustomerlist_Click);
             // 
             // btnAnonOrder
             // 
