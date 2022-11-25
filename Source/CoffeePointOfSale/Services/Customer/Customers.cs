@@ -33,15 +33,26 @@ public class Customers
         }
     }
 
+    //Indexer to return First Name
+    //public Customer? this[string FirstName]
+    //{
+    //    get
+    //    {
+    //        FirstName = (FirstName ?? string.Empty).Trim();
+    //        return _customerDict.ContainsKey(FirstName) ? _customerDict[FirstName] : null;
+    //    }
+    //}
+
     /// <summary>
     /// Adds a new customer to the customer dictionary.
     /// </summary>
     /// <param name="customer"></param>
     /// <returns>True if added. False if not added (phone already present in list). Does not throw.</returns>
-    public bool Add(Customer customer) 
+    public bool Add(Customer customer)
     {
         if (this[customer.Phone] != null) return false;
         _customerDict.Add(customer.Phone, customer);
+        customer.setId();   //Increases ID by 1 - Ian
         return true;
     }
 }

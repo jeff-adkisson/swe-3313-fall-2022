@@ -6,7 +6,9 @@ public class Customer
 {
     public const string AnonymousCustomerId = "anonymous";
 
-
+    private int _id = 3;    //Needs to increment by one every time a new customer is added. Initializing at 3 for now because that's what it's currently at in Customers.JSON - Ian
+    private string Customer_FN = "";
+    private string Customer_LN = "";
     private string _phone = ""; //backing field for Phone property. only needed because the setter has logic to handle nulls and trimming spaces.
     private int _rewardPoints;
 
@@ -31,12 +33,19 @@ public class Customer
         }
     }
 
+    //Added by Ian - Method to increase _id by 1 every time a customer is added
+    //Gets called in Customers.cs in the Add method
+    public void setId()
+    {
+        _id++;
+    }
+
     [JsonIgnore]
     public virtual bool IsAnonymous => Phone == AnonymousCustomerId;
 
     public override string ToString()
     {
-        return IsAnonymous  
+        return IsAnonymous
             ? "Anonymous Customer - No Reward Points"
             : $"{Phone}, Reward Points: {RewardPoints}";
     }
