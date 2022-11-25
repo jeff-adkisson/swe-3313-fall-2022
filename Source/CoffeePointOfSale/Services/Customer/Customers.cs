@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Text.Json;
 
 namespace CoffeePointOfSale.Services.Customer;
 
@@ -10,6 +11,9 @@ public class Customers
     [JsonProperty("Customers")]
     private readonly Dictionary<string, Customer> _customerDict = new();
 
+    //var options = new JsonSerializerOptions {  WriteIndented= true };
+    //string jsonString = JsonSerializer.Serialize(_customerDict, options);
+
     /// <summary>
     /// Returns a readonly list of all customers.
     /// </summary>
@@ -18,6 +22,16 @@ public class Customers
         _customerDict.Select(c => c.Value)
             .OrderBy(c => c.IsAnonymous ? 0 : 1)
             .ToList();
+
+    public void deserializeCustomersJson()
+    {
+
+    }
+
+    public IReadOnlyList<Customer> GetListOfCustomers()
+    {
+        return List;
+    }
 
     /// <summary>
     /// Indexer to return a specific customer by phone.
@@ -33,15 +47,26 @@ public class Customers
         }
     }
 
+    //Indexer to return First Name
+    //public Customer? this[string FirstName]
+    //{
+    //    get
+    //    {
+    //        FirstName = (FirstName ?? string.Empty).Trim();
+    //        return _customerDict.ContainsKey(FirstName) ? _customerDict[FirstName] : null;
+    //    }
+    //}
+
     /// <summary>
     /// Adds a new customer to the customer dictionary.
     /// </summary>
     /// <param name="customer"></param>
     /// <returns>True if added. False if not added (phone already present in list). Does not throw.</returns>
-    public bool Add(Customer customer) 
+    public bool Add(Customer customer)
     {
         if (this[customer.Phone] != null) return false;
         _customerDict.Add(customer.Phone, customer);
+        customer.setId();   //Increases ID by 1 - Ian
         return true;
     }
 }
