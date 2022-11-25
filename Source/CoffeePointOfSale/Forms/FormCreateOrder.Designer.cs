@@ -29,9 +29,17 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.Drink = new System.Windows.Forms.Label();
+            this.Cl2 = new System.Windows.Forms.Label();
             this.Cl1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.Whippedm = new System.Windows.Forms.Button();
             this.Whippedp = new System.Windows.Forms.Button();
             this.Shotm = new System.Windows.Forms.Button();
@@ -74,6 +82,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.Drink);
+            this.splitContainer1.Panel1.Controls.Add(this.Cl2);
             this.splitContainer1.Panel1.Controls.Add(this.Cl1);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.groupBox1);
@@ -91,24 +101,41 @@
             this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
             this.splitContainer1.Size = new System.Drawing.Size(1559, 1013);
-            this.splitContainer1.SplitterDistance = 901;
+            this.splitContainer1.SplitterDistance = 899;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 2;
+            // 
+            // Drink
+            // 
+            this.Drink.AutoSize = true;
+            this.Drink.Location = new System.Drawing.Point(26, 491);
+            this.Drink.Name = "Drink";
+            this.Drink.Size = new System.Drawing.Size(0, 20);
+            this.Drink.TabIndex = 0;
+            // 
+            // Cl2
+            // 
+            this.Cl2.AutoSize = true;
+            this.Cl2.Location = new System.Drawing.Point(26, 675);
+            this.Cl2.Name = "Cl2";
+            this.Cl2.Size = new System.Drawing.Size(0, 20);
+            this.Cl2.TabIndex = 13;
             // 
             // Cl1
             // 
             this.Cl1.AutoSize = true;
-            this.Cl1.Location = new System.Drawing.Point(127, 680);
+            this.Cl1.Location = new System.Drawing.Point(54, 511);
             this.Cl1.Name = "Cl1";
-            this.Cl1.Size = new System.Drawing.Size(0, 20);
+            this.Cl1.Size = new System.Drawing.Size(23, 20);
             this.Cl1.TabIndex = 12;
+            this.Cl1.Text = "\\n";
             this.Cl1.Click += new System.EventHandler(this.Customization_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(0, 556);
+            this.label4.Location = new System.Drawing.Point(0, 453);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(1525, 35);
             this.label4.TabIndex = 10;
@@ -118,8 +145,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Hide();
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.Whippedm);
             this.groupBox1.Controls.Add(this.Whippedp);
             this.groupBox1.Controls.Add(this.Shotm);
@@ -147,9 +179,63 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(127, 227);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(58, 20);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "label11";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(71, 193);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 20);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "label10";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(70, 153);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 20);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "label9";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(119, 120);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 20);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "label8";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(127, 83);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 20);
+            this.label7.TabIndex = 22;
+            this.label7.Text = "label7";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(119, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 20);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "label6";
+            // 
             // Whippedm
             // 
-            this.Whippedm.Location = new System.Drawing.Point(233, 36);
+            this.Whippedm.Location = new System.Drawing.Point(254, 37);
             this.Whippedm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Whippedm.Name = "Whippedm";
             this.Whippedm.Size = new System.Drawing.Size(41, 29);
@@ -160,7 +246,7 @@
             // 
             // Whippedp
             // 
-            this.Whippedp.Location = new System.Drawing.Point(185, 36);
+            this.Whippedp.Location = new System.Drawing.Point(206, 37);
             this.Whippedp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Whippedp.Name = "Whippedp";
             this.Whippedp.Size = new System.Drawing.Size(41, 29);
@@ -171,7 +257,7 @@
             // 
             // Shotm
             // 
-            this.Shotm.Location = new System.Drawing.Point(233, 73);
+            this.Shotm.Location = new System.Drawing.Point(254, 75);
             this.Shotm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Shotm.Name = "Shotm";
             this.Shotm.Size = new System.Drawing.Size(41, 29);
@@ -181,7 +267,7 @@
             // 
             // Shotp
             // 
-            this.Shotp.Location = new System.Drawing.Point(185, 73);
+            this.Shotp.Location = new System.Drawing.Point(206, 75);
             this.Shotp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Shotp.Name = "Shotp";
             this.Shotp.Size = new System.Drawing.Size(41, 29);
@@ -192,7 +278,7 @@
             // 
             // SVm
             // 
-            this.SVm.Location = new System.Drawing.Point(233, 112);
+            this.SVm.Location = new System.Drawing.Point(254, 113);
             this.SVm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SVm.Name = "SVm";
             this.SVm.Size = new System.Drawing.Size(41, 29);
@@ -202,7 +288,7 @@
             // 
             // SVp
             // 
-            this.SVp.Location = new System.Drawing.Point(185, 112);
+            this.SVp.Location = new System.Drawing.Point(206, 113);
             this.SVp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SVp.Name = "SVp";
             this.SVp.Size = new System.Drawing.Size(41, 29);
@@ -213,7 +299,7 @@
             // 
             // Icem
             // 
-            this.Icem.Location = new System.Drawing.Point(233, 149);
+            this.Icem.Location = new System.Drawing.Point(254, 149);
             this.Icem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Icem.Name = "Icem";
             this.Icem.Size = new System.Drawing.Size(41, 29);
@@ -224,7 +310,7 @@
             // 
             // Milkm
             // 
-            this.Milkm.Location = new System.Drawing.Point(233, 187);
+            this.Milkm.Location = new System.Drawing.Point(254, 188);
             this.Milkm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Milkm.Name = "Milkm";
             this.Milkm.Size = new System.Drawing.Size(41, 29);
@@ -235,7 +321,7 @@
             // 
             // Icep
             // 
-            this.Icep.Location = new System.Drawing.Point(185, 149);
+            this.Icep.Location = new System.Drawing.Point(206, 149);
             this.Icep.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Icep.Name = "Icep";
             this.Icep.Size = new System.Drawing.Size(41, 29);
@@ -246,7 +332,7 @@
             // 
             // Milkp
             // 
-            this.Milkp.Location = new System.Drawing.Point(185, 187);
+            this.Milkp.Location = new System.Drawing.Point(206, 188);
             this.Milkp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Milkp.Name = "Milkp";
             this.Milkp.Size = new System.Drawing.Size(41, 29);
@@ -257,7 +343,7 @@
             // 
             // Almondm
             // 
-            this.Almondm.Location = new System.Drawing.Point(233, 228);
+            this.Almondm.Location = new System.Drawing.Point(254, 229);
             this.Almondm.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Almondm.Name = "Almondm";
             this.Almondm.Size = new System.Drawing.Size(41, 29);
@@ -268,7 +354,7 @@
             // 
             // Almondp
             // 
-            this.Almondp.Location = new System.Drawing.Point(185, 228);
+            this.Almondp.Location = new System.Drawing.Point(206, 229);
             this.Almondp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Almondp.Name = "Almondp";
             this.Almondp.Size = new System.Drawing.Size(41, 29);
@@ -280,24 +366,24 @@
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(7, 232);
+            this.checkBox6.Location = new System.Drawing.Point(7, 225);
             this.checkBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(170, 24);
+            this.checkBox6.Size = new System.Drawing.Size(131, 24);
             this.checkBox6.TabIndex = 10;
-            this.checkBox6.Text = "Almond Cream $0.49";
+            this.checkBox6.Text = "Almond Cream";
             this.checkBox6.UseVisualStyleBackColor = true;
             this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(7, 199);
+            this.checkBox5.Location = new System.Drawing.Point(8, 192);
             this.checkBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(98, 24);
+            this.checkBox5.Size = new System.Drawing.Size(63, 24);
             this.checkBox5.TabIndex = 9;
-            this.checkBox5.Text = "Milk $0.99";
+            this.checkBox5.Text = "Milk ";
             this.checkBox5.UseVisualStyleBackColor = true;
             this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
@@ -307,9 +393,9 @@
             this.checkBox1.Location = new System.Drawing.Point(7, 40);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(152, 24);
+            this.checkBox1.Size = new System.Drawing.Size(113, 24);
             this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Whip Cream $0.49";
+            this.checkBox1.Text = "Whip Cream";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -319,9 +405,9 @@
             this.checkBox4.Location = new System.Drawing.Point(8, 153);
             this.checkBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(98, 24);
+            this.checkBox4.Size = new System.Drawing.Size(63, 24);
             this.checkBox4.TabIndex = 8;
-            this.checkBox4.Text = "Iced $1.49";
+            this.checkBox4.Text = "Iced ";
             this.checkBox4.UseVisualStyleBackColor = true;
             this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
@@ -331,9 +417,9 @@
             this.checkBox2.Location = new System.Drawing.Point(7, 83);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(162, 24);
+            this.checkBox2.Size = new System.Drawing.Size(127, 24);
             this.checkBox2.TabIndex = 6;
-            this.checkBox2.Text = "Shot Expresso $0.99";
+            this.checkBox2.Text = "Shot Expresso ";
             this.checkBox2.UseVisualStyleBackColor = true;
             this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
@@ -343,9 +429,9 @@
             this.checkBox3.Location = new System.Drawing.Point(7, 116);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(148, 24);
+            this.checkBox3.Size = new System.Drawing.Size(113, 24);
             this.checkBox3.TabIndex = 7;
-            this.checkBox3.Text = "Shot Vanilla $0.99";
+            this.checkBox3.Text = "Shot Vanilla ";
             this.checkBox3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.checkBox3.UseVisualStyleBackColor = true;
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
@@ -447,7 +533,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(-8, 0);
+            this.label5.Location = new System.Drawing.Point(3, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(252, 54);
             this.label5.TabIndex = 11;
@@ -459,7 +545,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(151)))), ((int)(((byte)(126)))));
-            this.ClientSize = new System.Drawing.Size(1541, 961);
+            this.ClientSize = new System.Drawing.Size(1541, 845);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.Name = "FormCreateOrder";
@@ -510,5 +596,13 @@
         private Label label5;
         private Button button4;
         private Label Cl1;
+        private Label label6;
+        private Label label11;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label Cl2;
+        private Label Drink;
     }
 }

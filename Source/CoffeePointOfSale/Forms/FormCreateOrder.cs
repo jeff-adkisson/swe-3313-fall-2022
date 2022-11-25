@@ -1,5 +1,7 @@
 ﻿using CoffeePointOfSale.Configuration;
 using CoffeePointOfSale.Services.FormFactory;
+using System.IO;
+using System.Windows.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,27 +19,28 @@ namespace CoffeePointOfSale.Forms.Base
     public partial class FormCreateOrder : Base.FormNoCloseBase
     {
         decimal subtotal = 0;
-        int whipped = 0;
-        int shotexpresso = 0;
-        int shotvanilla = 0;
-        int iced = 0;
-        int milked = 0;
-        int almond = 0;
+        int whipped = 1;
+        int shotexpresso = 1;
+        int shotvanilla = 1;
+        int iced = 1;
+        int milked = 1;
+        int almond = 1;
 
        
 
         private IAppSettings _appSettings;
         
         
-        public FormCreateOrder(IAppSettings appSettings)
+        public FormCreateOrder(IAppSettings appSettings) : base(appSettings)
         {
             InitializeComponent();
+            
         }
         
 
         private void FormCreateOrder_Load(object sender, EventArgs e)
         {
-
+            SetTitle("Create Order");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -48,7 +51,16 @@ namespace CoffeePointOfSale.Forms.Base
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             groupBox1.Show();
-           // Cl1.Text= "1x  - "+comboBox1.Text;
+            if (Drink.Text.Length > 0)
+            {
+                Cl2.Text = "1x - "+comboBox1.Text;
+            }
+            else
+            {
+                Drink.Text = "1x - " + comboBox1.Text;
+            }
+
+           
             
        
         }
@@ -63,16 +75,17 @@ namespace CoffeePointOfSale.Forms.Base
             
             if (checkBox2.Checked)
             {
-                Cl1.Text = Cl1.Text  + Environment.NewLine+ "   "+ shotexpresso+ checkBox2.Text;
-            }
-            else
-            {
-                if (Cl1.Text.Contains(checkBox2.Text))
+                if (Cl2.Text.Length > 0)
                 {
-                    Cl1.Text = Cl1.Text.Replace(checkBox2.Text,"");
+                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + shotexpresso + checkBox2.Text;
+                }
+                else
+                {
+                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + shotexpresso + checkBox2.Text;
                 }
                
             }
+            
 
         }
 
@@ -95,16 +108,16 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox1.Checked)
             {
-                Cl1.Text = Cl1.Text + Environment.NewLine+ "   " +whipped +checkBox1.Text;
-            }
-            else
-            {
-                if (Cl1.Text.Contains(checkBox1.Text))
+                if (Cl2.Text.Length > 0)
                 {
-
-                    Cl1.Text = Cl1.Text.Replace(checkBox1.Text, "");
+                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + whipped + checkBox1.Text;
+                }
+                else
+                {
+                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + whipped + checkBox1.Text;
                 }
             }
+            
         }
 
         private void Customization_Click(object sender, EventArgs e)
@@ -116,28 +129,29 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox3.Checked)
             {
-                Cl1.Text = Cl1.Text  + Environment.NewLine + "   "+shotvanilla+checkBox3.Text;
-            }
-            else
-            {
-                if (Cl1.Text.Contains(checkBox3.Text))
+                if (Cl2.Text.Length > 0)
                 {
-                    Cl1.Text = Cl1.Text.Replace(checkBox3.Text, "");
+                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + shotvanilla + checkBox3.Text;
+                }
+                else
+                {
+                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + shotvanilla + checkBox3.Text;
                 }
             }
+            
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox4.Checked)
             {
-                Cl1.Text = Cl1.Text +  Environment.NewLine + "   " + iced +checkBox4.Text;
-            }
-            else
-            {
-                if (Cl1.Text.Contains(checkBox4.Text))
+                if (Cl2.Text.Length > 0)
                 {
-                    Cl1.Text = Cl1.Text.Replace(checkBox4.Text, "");
+                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + iced + checkBox4.Text;
+                }
+                else
+                {
+                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + iced + checkBox4.Text;
                 }
             }
             
@@ -147,31 +161,32 @@ namespace CoffeePointOfSale.Forms.Base
         {
             if (checkBox5.Checked)
             {
-                Cl1.Text = Cl1.Text  + Environment.NewLine + "   " +milked+ checkBox5.Text;
-            }
-            else
-            {
-                if (Cl1.Text.Contains(checkBox5.Text))
+                if (Cl2.Text.Length > 0)
                 {
-                    Cl1.Text = Cl1.Text.Replace(checkBox5.Text, "");
+                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + milked + checkBox5.Text;
+                }
+                else
+                {
+                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + milked + checkBox5.Text;
                 }
             }
+           
             
         }
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox6.Checked) {
-                Cl1.Text = Cl1.Text +  Environment.NewLine + "   " + almond+ checkBox6.Text;
-            }
-            else
-            {
-                if (Cl1.Text.Contains(checkBox6.Text))
+                if (Cl2.Text.Length > 0)
                 {
-                    Cl1.Text = Cl1.Text.Replace(checkBox6.Text, "");
+                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + almond + checkBox6.Text;
                 }
-
+                else
+                {
+                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + almond + checkBox6.Text;
+                }
             }
+           
             
             
         }
@@ -190,6 +205,7 @@ namespace CoffeePointOfSale.Forms.Base
         private void Whippedp_Click(object sender, EventArgs e)
         {
             whipped++;
+
 
         }
 
@@ -244,6 +260,36 @@ namespace CoffeePointOfSale.Forms.Base
         private void Almondm_Click(object sender, EventArgs e)
         {
             almond--;
+        }
+        private void ComputeTotal()
+        {
+            var tax = _appSettings;
+        }
+        private void Update()
+
+        {
+            StreamWriter sw = null;
+            try
+            {
+                string filePath = @"C:\Users\omowu\Source\Repos\swe\ReadFile\Textfile1.txt";
+                sw=new StreamWriter(filePath);
+                using (sw)
+                {
+                    sw.WriteLine("sw");
+                }
+            }
+            catch (Exception)
+            {
+               
+            }
+           
+
+
+
+
+
+            //C:\Users\omowu\Source\Repos\swe\Source\CoffeePointOfSale\ReadFile
+
         }
     }
 
