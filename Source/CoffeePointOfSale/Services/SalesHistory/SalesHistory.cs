@@ -9,14 +9,15 @@ namespace CoffeePointOfSale.Services.SalesHistory;
 
 class SalesHistory
 {
-    private string DateTime = "";
-    private Decimal Tax;
-    private Decimal Subtotal;
-    private Decimal Total;
-    private int PointsEarned;
-    private string Payment = "";
-    private string PaymentDetails = "";
+    public string DateTime = "";
+    public Decimal Tax;
+    public Decimal Subtotal;
+    public Decimal Total;
+    public int PointsEarned;
+    public string Payment = "";
+    public string PaymentDetails = "";
 
-    //List<DrinkInOrder> drinksInOrder = new List<DrinkInOrder>();
+    //List<Drink> drinksInOrder = new List<Drink>();
 
+    //Needs to send info to CSV Formatter
 }

@@ -33,6 +33,8 @@ public class Customer
         }
     }
 
+    public int getRewardsPoints() { return _rewardPoints; }
+
     //Added by Ian - Method to increase _id by 1 every time a customer is added
     //Gets called in Customers.cs in the Add method
     public void setId()

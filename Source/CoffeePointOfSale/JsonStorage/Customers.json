@@ -5,28 +5,56 @@
       "firstName": "anonymous",
       "lastName": "anonymous",
       "Phone": "anonymous",
-      "RewardPoints": 0
+      "RewardPoints": 0,
+      "SalesHistory": []
     },
     "404-444-5555": {
       "CID": 1,
       "firstName": "Test",
       "lastName": "Testor",
       "Phone": "404-444-5555",
-      "RewardPoints": 95
+      "RewardPoints": 95,
+      "SalesHistory": [
+        {
+          "Date/Time": "2022-11-10 13:30:00",
+          "Tax": 0.20,
+          "Subtotal": 2.00,
+          "Total": 2.20,
+          "PointEarned": 20,
+          "Payment": "Credit",
+          "PaymentDetails": "9112",
+          "DrinksInOrder": [
+            {
+              "Drink": "Coffee",
+              "BasePrice": 1.00,
+              "Customizations": "Sugar:$0.00",
+              "Price": 1.00
+            },
+            {
+              "Drink": "Coffee",
+              "BasePrice": 1.00,
+              "Customizations": "Cream:$0.00,Sugar:$0.00",
+              "Price": 1.00
+            }
+          ]
+        }
+      ]
     },
     "404-678-6795": {
       "CID": 2,
       "firstName": "Chevy",
       "lastName": "Chase",
       "Phone": "404-678-6795",
-      "RewardPoints": 95
+      "RewardPoints": 95,
+      "SalesHistory": []
     },
     "911-483-7241": {
       "CID": 3,
       "firstName": "Kim",
       "lastName": "Petras",
       "Phone": "911-483-7241",
-      "RewardPoints": 200
+      "RewardPoints": 200,
+      "SalesHistory": []
     }
   }
 }

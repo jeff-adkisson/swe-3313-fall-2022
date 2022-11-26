@@ -25,4 +25,6 @@ class Drink
         Customization c = new Customization(n, q, p);
         totalPrice = basePrice + (p * q);
     }
+
+    public string GetName() { return name; }
 }
