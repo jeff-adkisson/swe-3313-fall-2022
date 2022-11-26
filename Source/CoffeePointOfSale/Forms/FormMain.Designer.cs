@@ -75,7 +75,7 @@ sealed partial class FormMain
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(151)))), ((int)(((byte)(126)))));
-            this.ClientSize = new System.Drawing.Size(1541, 961);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.Controls.Add(this.CustomerList);
             this.Controls.Add(this.CreateOrder);
             this.Controls.Add(this.btnManagement);

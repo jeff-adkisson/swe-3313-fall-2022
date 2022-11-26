@@ -14,7 +14,7 @@ public class CustomerService : ICustomerService
     public CustomerService(IStorageService storageService)
     {
         _storageService = storageService;
-        Customers = _storageService.Read<Customers>(); //load customers from JSON file
+        Customers = _storageService.Read<Customers>(nameof(Customers)); //load customers from JSON file
 
         CreateAnonymousCustomer();
     }
@@ -28,5 +28,5 @@ public class CustomerService : ICustomerService
 
     public Customers Customers { get; init; }
 
-    public void Write() => _storageService.Write(Customers);
+    public void Write() => _storageService.Write(nameof(Customer), Customers);
 }

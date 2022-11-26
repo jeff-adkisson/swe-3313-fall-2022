@@ -63,8 +63,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.splitContainer1.Size = new System.Drawing.Size(1348, 729);
-            this.splitContainer1.SplitterDistance = 894;
+            this.splitContainer1.Size = new System.Drawing.Size(732, 399);
+            this.splitContainer1.SplitterDistance = 485;
             this.splitContainer1.TabIndex = 0;
             // 
             // label2
@@ -146,6 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(732, 399);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(3, 7, 3, 7);
             this.Name = "FormPayment";

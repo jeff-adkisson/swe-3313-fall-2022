@@ -2,7 +2,7 @@
 
 public interface IStorageService
 {
-    T Read<T>() where T : new();
+    T Read<T>(string name) where T : new();
     
-    void Write<T>(T value);
+    void Write<T>(string name, T value);
 }

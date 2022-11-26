@@ -11,12 +11,18 @@ public class DrinkMenuService : IDrinkMenuService
     public DrinkMenuService(IStorageService storageService)
     {
         _storageService = storageService;
-        DrinkMenu = _storageService.Read<DrinkMenu.DrinkMenu>();
+        
+        List<Drink> Drinks = _storageService.Read<List<Drink>>(nameof(DrinkMenu));
+
+        DrinkMenu = new DrinkMenu.DrinkMenu()
+        {
+            Drinks = Drinks
+        };
     }
 
 
         //your DrinkMenu.json to load on start will go in the JsonStorage directory
         public DrinkMenu.DrinkMenu DrinkMenu{ get; init; }
-        public void Write() => _storageService.Write(DrinkMenu);
+        public void Write() => _storageService.Write(nameof(DrinkMenu),DrinkMenu.Drinks);
 
 }

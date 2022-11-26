@@ -2,6 +2,6 @@
 
 public interface IDrinkMenuService 
 {
-    Drinks Drinks { get; init; }
+    DrinkMenu DrinkMenu { get; init; }
     void Write();
 }

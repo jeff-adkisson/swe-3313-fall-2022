@@ -4,7 +4,7 @@ using CoffeePointOfSale.Services.FormFactory;
 
 namespace CoffeePointOfSale.Forms;
 
-public partial class FormMain : FormBase
+public partial class FormMain : Base.FormNoCloseBase
 {
     public FormMain(IAppSettings appSettings) : base(appSettings)
     {

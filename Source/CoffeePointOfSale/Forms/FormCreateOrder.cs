@@ -19,6 +19,8 @@ using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Collections;
+using CheckBox = System.Windows.Forms.CheckBox;
 
 namespace CoffeePointOfSale.Forms.Base
 {
@@ -44,6 +46,7 @@ namespace CoffeePointOfSale.Forms.Base
             _appSettings = appSettings;
             _drinkMenuService = drinkMenuService;
             
+            
         }
         
 
@@ -59,50 +62,59 @@ namespace CoffeePointOfSale.Forms.Base
         {
 
         }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            
-            //Add this onload. 
-           // groupBox1.Show();
-           // if (Drink.Text.Length > 0)
-           // {
-           //     Cl2.Text = "1x - "+comboBox1.Text;
-           // }
-           /// else
-           // {
-           //     Drink.Text = "1x - " + comboBox1.Text;
-           // }
-
-           
-            
        
-        }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) 
             
-            if (checkBox2.Checked)
+        {
+            comboBox2.Items.Clear();
+
+            ArrayList alist = new ArrayList();
+
+            var drinkList = _drinkMenuService.DrinkMenu.Drinks;
+         
+            for (int i = 0; i < drinkList.Count; i++)
             {
-                if (Cl2.Text.Length > 0)
+                if (drinkList[i].Name == comboBox1.Text)
                 {
-                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + shotexpresso + checkBox2.Text;
+                    for(int j = 0; j < drinkList[i].Customizations.Count; j++)
+                    {
+                        comboBox2.Items.Add(drinkList[i].Customizations[j].Name);
+
+                    }
                 }
-                else
-                {
-                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + shotexpresso + checkBox2.Text;
-                }
-               
             }
             
 
+            
+            
+
+
+            //Add this onload. 
+            // groupBox1.Show();
+            // if (Drink.Text.Length > 0)
+            // {
+            //     Cl2.Text = "1x - "+comboBox1.Text;
+            // }
+            /// else
+            // {
+            //     Drink.Text = "1x - " + comboBox1.Text;
+            // }
+
+
+
+
         }
+
+       
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+
+        }
+
+
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -119,93 +131,19 @@ namespace CoffeePointOfSale.Forms.Base
 
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox1.Checked)
-            {
-                if (Cl2.Text.Length > 0)
-                {
-                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + whipped + checkBox1.Text;
-                }
-                else
-                {
-                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + whipped + checkBox1.Text;// "
-                                                                                                 // " 1Whip Cream
-                }
-            }
-            
-        }
+       
 
         private void Customization_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox3.Checked)
-            {
-                if (Cl2.Text.Length > 0)
-                {
-                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + shotvanilla + checkBox3.Text;
-                }
-                else
-                {
-                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + shotvanilla + checkBox3.Text;
-                }
-            }
-            
-        }
+       
 
-        private void checkBox4_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox4.Checked)
-            {
-                if (Cl2.Text.Length > 0)
-                {
-                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + iced + checkBox4.Text;
-                }
-                else
-                {
-                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + iced + checkBox4.Text;
-                }
-            }
-            
-        }
+        
 
-        private void checkBox5_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox5.Checked)
-            {
-                if (Cl2.Text.Length > 0)
-                {
-                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + milked + checkBox5.Text;
-                }
-                else
-                {
-                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + milked + checkBox5.Text;
-                }
-            }
-           
-            
-        }
 
-        private void checkBox6_CheckedChanged(object sender, EventArgs e)
-        {
-            if (checkBox6.Checked) {
-                if (Cl2.Text.Length > 0)
-                {
-                    Cl2.Text = Cl2.Text + Environment.NewLine + "   " + almond + checkBox6.Text;
-                }
-                else
-                {
-                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + almond + checkBox6.Text;
-                }
-            }
-           
-            
-            
-        }
+       
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -241,88 +179,12 @@ namespace CoffeePointOfSale.Forms.Base
 
         }
 
-        private void Whippedm_Click(object sender, EventArgs e)
-        {
-            whipped--;
-        }
-
-        private void Shotp_Click(object sender, EventArgs e)
-        {
-            shotexpresso++;
-        }
-        private void Shotm_Click(object sender, EventArgs e)
-        {
-            shotexpresso--;
-        }
-
-        private void SVp_Click(object sender, EventArgs e)
-        {
-            shotvanilla++;
-        }
-        private void SVm_Click(Object sender, EventArgs e)
-        {
-            shotvanilla--;
-        }
-
-        private void Icep_Click(object sender, EventArgs e)
-        {
-            iced++;
-        }
-
-        private void Icem_Click(object sender, EventArgs e)
-        {
-            iced--;
-        }
-
-        private void Milkp_Click(object sender, EventArgs e)
-        {
-            milked++;
-        }
-
-        private void Milkm_Click(object sender, EventArgs e)
-        {
-            milked--;
-        }
-
-        private void Almondp_Click(object sender, EventArgs e)
-        {
-            almond++;
-        }
-
-        private void Almondm_Click(object sender, EventArgs e)
-        {
-            almond--;
-        }
+        
         private void ComputeTotal()
         {
             var tax = _appSettings;
         }
-        private void Update()
-
-        {
-            StreamWriter sw = null;
-            try
-            {
-                string filePath = @"C:\Users\omowu\Source\Repos\swe\ReadFile\Textfile1.txt";
-                sw=new StreamWriter(filePath);
-                using (sw)
-                {
-                    sw.WriteLine("sw");
-                }
-            }
-            catch (Exception)
-            {
-               
-            }
-           
-
-
-
-
-
-            //C:\Users\omowu\Source\Repos\swe\Source\CoffeePointOfSale\ReadFile
-
-        }
+       
 
         private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
@@ -330,13 +192,16 @@ namespace CoffeePointOfSale.Forms.Base
         }
         private void ExampleOneSimpleClassObject()
         {
-            var drinkList = _drinkMenuService.Drinks.List;
+            var drinkList = _drinkMenuService.DrinkMenu.Drinks;
             for(int i = 0; i < drinkList.Count; i++)
             {
                 comboBox1.Items.Add(drinkList[i].Name);
             }
             
+            
+            
         }
+        
     }
 
 
