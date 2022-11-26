@@ -13,6 +13,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using CoffeePointOfSale.Services.DrinkMenu;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CoffeePointOfSale.Forms.Base
 {
@@ -26,14 +32,17 @@ namespace CoffeePointOfSale.Forms.Base
         int milked = 1;
         int almond = 1;
 
-       
+       //1366, 768
 
         private IAppSettings _appSettings;
+        private IDrinkMenuService _drinkMenuService;
         
         
-        public FormCreateOrder(IAppSettings appSettings) : base(appSettings)
+        public FormCreateOrder(IAppSettings appSettings, IDrinkMenuService drinkMenuService) : base(appSettings)
         {
             InitializeComponent();
+            _appSettings = appSettings;
+            _drinkMenuService = drinkMenuService;
             
         }
         
@@ -41,6 +50,9 @@ namespace CoffeePointOfSale.Forms.Base
         private void FormCreateOrder_Load(object sender, EventArgs e)
         {
             SetTitle("Create Order");
+            ExampleOneSimpleClassObject();
+
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -50,15 +62,18 @@ namespace CoffeePointOfSale.Forms.Base
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            groupBox1.Show();
-            if (Drink.Text.Length > 0)
-            {
-                Cl2.Text = "1x - "+comboBox1.Text;
-            }
-            else
-            {
-                Drink.Text = "1x - " + comboBox1.Text;
-            }
+            
+            
+            //Add this onload. 
+           // groupBox1.Show();
+           // if (Drink.Text.Length > 0)
+           // {
+           //     Cl2.Text = "1x - "+comboBox1.Text;
+           // }
+           /// else
+           // {
+           //     Drink.Text = "1x - " + comboBox1.Text;
+           // }
 
            
             
@@ -114,7 +129,8 @@ namespace CoffeePointOfSale.Forms.Base
                 }
                 else
                 {
-                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + whipped + checkBox1.Text;
+                    Cl1.Text = Cl1.Text + Environment.NewLine + "   " + whipped + checkBox1.Text;// "
+                                                                                                 // " 1Whip Cream
                 }
             }
             
@@ -205,6 +221,22 @@ namespace CoffeePointOfSale.Forms.Base
         private void Whippedp_Click(object sender, EventArgs e)
         {
             whipped++;
+            if(Cl1.Text.Contains("Whip Cream") == true)
+            {
+                int first = Cl1.Text.IndexOf('W')-2;
+                string first1 = Cl1.Text.Remove(first, 12);
+                Cl1.Text = first1+ whipped + "Whip Cream" + Environment.NewLine;
+                Cl1.Text = Cl1.Text.TrimStart();
+            }
+            // "
+            // " 2Whip Cream
+            //   
+
+            // Cl1.Text.Replace("1Whip Cream", whipped+"Whip Cream");
+            //find the character location of 1x whipped cream and then replace it with 2x whipped cream. 
+            // find a way to get order
+            //Also, find a way to get 
+
 
 
         }
@@ -290,6 +322,20 @@ namespace CoffeePointOfSale.Forms.Base
 
             //C:\Users\omowu\Source\Repos\swe\Source\CoffeePointOfSale\ReadFile
 
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void ExampleOneSimpleClassObject()
+        {
+            var drinkList = _drinkMenuService.Drinks.List;
+            for(int i = 0; i < drinkList.Count; i++)
+            {
+                comboBox1.Items.Add(drinkList[i].Name);
+            }
+            
         }
     }
 

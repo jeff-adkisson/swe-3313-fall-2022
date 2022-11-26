@@ -49,4 +49,5 @@ internal static class Program
         return Host.CreateDefaultBuilder()
             .ConfigureServices((context, services) => Startup.ConfigureServices(services));
     }
+   
 }

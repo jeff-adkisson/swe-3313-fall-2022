@@ -100,8 +100,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.label1);
             this.splitContainer1.Panel2.Controls.Add(this.button1);
             this.splitContainer1.Panel2.Controls.Add(this.label5);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(1559, 1013);
-            this.splitContainer1.SplitterDistance = 899;
+            this.splitContainer1.SplitterDistance = 897;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 2;
             // 
@@ -126,9 +127,9 @@
             this.Cl1.AutoSize = true;
             this.Cl1.Location = new System.Drawing.Point(54, 511);
             this.Cl1.Name = "Cl1";
-            this.Cl1.Size = new System.Drawing.Size(23, 20);
+            this.Cl1.Size = new System.Drawing.Size(15, 20);
             this.Cl1.TabIndex = 12;
-            this.Cl1.Text = "\\n";
+            this.Cl1.Text = "_";
             this.Cl1.Click += new System.EventHandler(this.Customization_Click);
             // 
             // label4
@@ -545,7 +546,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(151)))), ((int)(((byte)(126)))));
-            this.ClientSize = new System.Drawing.Size(1541, 845);
+            this.ClientSize = new System.Drawing.Size(1565, 1016);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.Name = "FormCreateOrder";
