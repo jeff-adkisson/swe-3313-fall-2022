@@ -13,6 +13,4 @@ public class DrinkMenuService : IDrinkMenuService
 
         
 
-        //your DrinkMenu.json to load on start will go in the JsonStorage directory
-    }
 }
