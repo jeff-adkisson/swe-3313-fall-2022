@@ -1,5 +1,9 @@
+
 ﻿using CoffeePointOfSale.Services.Customer;
 using CoffeePointOfSale.Services.DrinkInOrder__Customizations;
+
+﻿using CoffeePointOfSale.Forms.Base;
+
 using CoffeePointOfSale.Services.FormFactory;
 using System;
 using System.Collections.Generic;
@@ -10,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
@@ -38,10 +43,14 @@ namespace CoffeePointOfSale.Forms
         bool anonymous = true;
         
       
+
+
+
         public FormPayment()
         {
             InitializeComponent();
         }
+
 
         private void btnPayWithCredit_Click(object sender, EventArgs e)
         {
@@ -124,10 +133,10 @@ namespace CoffeePointOfSale.Forms
                 WriteIndented = true,
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase
             };
-            var json = JsonConvert.SerializeObject(order, serializerOptions);   ///Why does it need to be null? This is literally copied from his slides and linqpad demos what am I doing wrong??
+            //var json = JsonConvert.SerializeObject(order, serializerOptions);   ///Why does it need to be null? This is literally copied from his slides and linqpad demos what am I doing wrong??
             //json.Dump("Customers.cs");
         }
-
+        
        
     }
 }
@@ -138,3 +147,27 @@ namespace CoffeePointOfSale.Forms
 //Payment to Reciept: Update rewards points in Customers.JSON,
 //Customers.JSON needs to be updated to account for sales/order history
 //Info is sent to this one file
+//=======
+//        private void FormPayment_Load(object sender, EventArgs e)
+//        {
+
+//        }
+
+//        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+//        {
+
+//        }
+
+//        private void textBox2_TextChanged(object sender, EventArgs e)
+//        {
+
+//        }
+
+//        private void Return_Click(object sender, EventArgs e)
+//        {
+//            Hide();
+//            FormFactory.Get<FormMain>().Show();
+//        }
+//    }
+//}
+//>>>>>>> main
