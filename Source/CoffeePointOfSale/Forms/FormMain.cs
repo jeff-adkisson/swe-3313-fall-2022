@@ -33,8 +33,9 @@ public partial class FormMain : FormBase
 
     }
 
-    private void onCustomerList(object sender, EventArgs e)
+    private void btncustomerlist_Click(object sender, EventArgs e)
     {
-
+        Hide();
+        FormFactory.Get<FormCustomerList>().Show();
     }
 }

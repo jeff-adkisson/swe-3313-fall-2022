@@ -34,6 +34,8 @@ sealed partial class FormMain
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.btncustomerlist = new System.Windows.Forms.Button();
+            this.btnAnonOrder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnManagement
@@ -60,18 +62,6 @@ sealed partial class FormMain
             this.CreateOrder.UseVisualStyleBackColor = false;
             this.CreateOrder.Click += new System.EventHandler(this.CreateOrder_Click);
             // 
-            // CustomerList
-            // 
-            this.CustomerList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(211)))), ((int)(((byte)(83)))));
-            this.CustomerList.Font = new System.Drawing.Font("Microsoft YaHei", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CustomerList.Location = new System.Drawing.Point(388, 229);
-            this.CustomerList.Name = "CustomerList";
-            this.CustomerList.Size = new System.Drawing.Size(373, 96);
-            this.CustomerList.TabIndex = 2;
-            this.CustomerList.Text = "Customer List";
-            this.CustomerList.UseVisualStyleBackColor = false;
-            this.CustomerList.Click += new System.EventHandler(this.onCustomerList);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
@@ -91,10 +81,29 @@ sealed partial class FormMain
             this.label1.Size = new System.Drawing.Size(182, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Main Menu";
+            // btncustomerlist
+            // 
+            this.btncustomerlist.Location = new System.Drawing.Point(337, 325);
+            this.btncustomerlist.Name = "btncustomerlist";
+            this.btncustomerlist.Size = new System.Drawing.Size(674, 150);
+            this.btncustomerlist.TabIndex = 1;
+            this.btncustomerlist.Text = "Customer List";
+            this.btncustomerlist.UseVisualStyleBackColor = true;
+            this.btncustomerlist.Click += new System.EventHandler(this.btncustomerlist_Click);
+            // 
+            // btnAnonOrder
+            // 
+            this.btnAnonOrder.Location = new System.Drawing.Point(337, 125);
+            this.btnAnonOrder.Name = "btnAnonOrder";
+            this.btnAnonOrder.Size = new System.Drawing.Size(674, 150);
+            this.btnAnonOrder.TabIndex = 2;
+            this.btnAnonOrder.Text = "Create Order";
+            this.btnAnonOrder.UseVisualStyleBackColor = true;
+
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(184)))), ((int)(((byte)(151)))), ((int)(((byte)(126)))));
             this.ClientSize = new System.Drawing.Size(1194, 570);
@@ -103,6 +112,7 @@ sealed partial class FormMain
             this.Controls.Add(this.CreateOrder);
             this.Controls.Add(this.btnManagement);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Controls.Add(this.btncustomerlist);
             this.Name = "FormMain";
             this.Text = "Form";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormMainClosed);
@@ -117,7 +127,7 @@ sealed partial class FormMain
 
     private Button btnManagement;
     private Button CreateOrder;
-    private Button CustomerList;
     private Panel panel1;
     private Label label1;
+    private Button btncustomerlist;
 }
