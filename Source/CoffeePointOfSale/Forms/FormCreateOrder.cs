@@ -28,6 +28,7 @@ namespace CoffeePointOfSale.Forms.Base
 
     {
         decimal subtotal = 0;
+        decimal fsubtotal = 0; 
         int whipped = 1;
         int shotexpresso = 1;
         int shotvanilla = 1;
@@ -153,13 +154,21 @@ namespace CoffeePointOfSale.Forms.Base
         {
             Cl6.Text = Drink.Text + Environment.NewLine + Cl1.Text;
             Cl1.Text = "";
+            if(Cl6.Text.Length > 0 )
+            {
+               tax.Text =  "Tax: " +  _appSettings.Tax.Rate.ToString();
+            }
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Hide();
-            FormFactory.Get<FormPayment>().Show();
+            if(Cl6.Text.Length != 0)
+            {
+                Hide();
+                FormFactory.Get<FormPayment>().Show();
+            }
+           
         }
 
         private void Whippedp_Click(object sender, EventArgs e)
@@ -240,11 +249,14 @@ namespace CoffeePointOfSale.Forms.Base
                         {
                             int quantity = int.Parse(comboBox3.Text);
                             Cl1.Text = Cl1.Text + Environment.NewLine + comboBox3.Text + "x" + comboBox2.Text + (drinkList[i].Customizations[j].Price*quantity);
+                            subtotal =  (drinkList[i].Customizations[j].Price * quantity);
                         }
 
                     }
+                    subtotal = subtotal + drinkList[i].BasePrice;
                 }
             }
+            
            
         }
 
@@ -257,6 +269,16 @@ namespace CoffeePointOfSale.Forms.Base
         {
             Cl1.Text = "";
             Drink.Text = "";
+        }
+
+        private void label6_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tax_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

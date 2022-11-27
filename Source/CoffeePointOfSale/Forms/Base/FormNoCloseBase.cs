@@ -42,7 +42,7 @@ public class FormNoCloseBase : FormBase
             // FormNoCloseBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.ClientSize = new System.Drawing.Size(1364, 760);
             this.ControlBox = false;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
