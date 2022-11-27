@@ -2,7 +2,7 @@ using CoffeePointOfSale.Configuration;
 
 namespace CoffeePointOfSale.Forms.Base;
 
-public class FormBase : Form
+public class FormBase : System.Windows.Forms.Form
 {
     public FormBase()
     {
@@ -34,7 +34,7 @@ public class FormBase : Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1364, 760);
             this.Name = "FormBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormBase";
