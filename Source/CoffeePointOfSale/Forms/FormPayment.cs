@@ -14,6 +14,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Diagnostics;
 using CoffeePointOfSale.Services.SalesHistory;
+using System.Text.Json;
 
 namespace CoffeePointOfSale.Forms
 {
@@ -117,7 +118,14 @@ namespace CoffeePointOfSale.Forms
                 Payment = payment,
                 PaymentDetails = paymentDetails
             };
-            string json = JsonConvert.SerializeObject(order);
+
+            var serializerOptions = new JsonSerializerOptions
+            {
+                WriteIndented = true,
+                PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+            };
+            var json = JsonConvert.SerializeObject(order, serializerOptions);   ///Why does it need to be null? This is literally copied from his slides and linqpad demos what am I doing wrong??
+            //json.Dump("Customers.cs");
         }
 
        
