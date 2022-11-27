@@ -7,9 +7,9 @@ public class StorageService : IStorageService
 {
     private const string JsonDirectory = "JsonStorage";
 
-    public T Read<T>() where T : new()
+    public T Read<T>(string name) where T : new()
     {
-        var filename = GetFilename<T>();
+        var filename = GetFilename(name);
         CreateFileIfNotFound(filename);
 
         var jsonInFile = File.ReadAllText(filename);
@@ -20,11 +20,11 @@ public class StorageService : IStorageService
                    $"type {typeof(T).FullName}");
     }
 
-    public void Write<T>(T instanceToSerialize)
+    public void Write<T>( string name, T instanceToSerialize)
     {
         if (instanceToSerialize == null)
             throw new ArgumentException("instanceToSerialize cannot be null", nameof(instanceToSerialize));
-        var filename = GetFilename<T>();
+        var filename = GetFilename(name);
         var jsonToWrite = JsonConvert.SerializeObject(instanceToSerialize, Formatting.Indented);
             File.WriteAllText(filename, jsonToWrite);
     }
@@ -35,9 +35,9 @@ public class StorageService : IStorageService
         File.WriteAllText(filename, "{}"); //writes an empty JSON file
     }
 
-    private static string GetFilename<T>()
+    private static string GetFilename(string name)
     {
-        var filenameFromType = $"{typeof(T).Name}.json";
+        var filenameFromType = $"{name}.json";
         var binPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
         var fullPath = Path.Combine(binPath ?? throw new InvalidOperationException("binPath is null"), JsonDirectory,
             filenameFromType);
