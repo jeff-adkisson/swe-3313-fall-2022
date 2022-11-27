@@ -25,6 +25,7 @@ using CheckBox = System.Windows.Forms.CheckBox;
 namespace CoffeePointOfSale.Forms.Base
 {
     public partial class FormCreateOrder : Base.FormNoCloseBase
+
     {
         decimal subtotal = 0;
         int whipped = 1;
@@ -67,6 +68,8 @@ namespace CoffeePointOfSale.Forms.Base
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) 
             
         {
+            Drink.Text = comboBox1.Text;
+           
             comboBox2.Items.Clear();
 
             ArrayList alist = new ArrayList();
@@ -84,6 +87,7 @@ namespace CoffeePointOfSale.Forms.Base
                     }
                 }
             }
+
             
 
             
@@ -135,7 +139,7 @@ namespace CoffeePointOfSale.Forms.Base
 
         private void Customization_Click(object sender, EventArgs e)
         {
-
+            
         }
 
        
@@ -147,7 +151,9 @@ namespace CoffeePointOfSale.Forms.Base
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Cl6.Text = Drink.Text + Environment.NewLine + Cl1.Text;
             Cl1.Text = "";
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -201,7 +207,57 @@ namespace CoffeePointOfSale.Forms.Base
             
             
         }
-        
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Drink_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+            var drinkList = _drinkMenuService.DrinkMenu.Drinks;
+
+            for (int i = 0; i < drinkList.Count; i++)
+            {
+                if (drinkList[i].Name == comboBox1.Text)
+                {
+                    
+                    for (int j = 0; j < drinkList[i].Customizations.Count; j++)
+                    {
+                        if (comboBox2.Text == drinkList[i].Customizations[j].Name)
+                        {
+                            int quantity = int.Parse(comboBox3.Text);
+                            Cl1.Text = Cl1.Text + Environment.NewLine + comboBox3.Text + "x" + comboBox2.Text + (drinkList[i].Customizations[j].Price*quantity);
+                        }
+
+                    }
+                }
+            }
+           
+        }
+
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Cl1.Text = "";
+            Drink.Text = "";
+        }
     }
 
 

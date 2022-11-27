@@ -36,7 +36,7 @@ sealed partial class FormMain
             // btnManagement
             // 
             this.btnManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(95)))), ((int)(((byte)(98)))));
-            this.btnManagement.Location = new System.Drawing.Point(621, 416);
+            this.btnManagement.Location = new System.Drawing.Point(500, 421);
             this.btnManagement.Name = "btnManagement";
             this.btnManagement.Size = new System.Drawing.Size(331, 71);
             this.btnManagement.TabIndex = 0;
@@ -48,7 +48,7 @@ sealed partial class FormMain
             // 
             this.CreateOrder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
             this.CreateOrder.Font = new System.Drawing.Font("Microsoft YaHei", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CreateOrder.Location = new System.Drawing.Point(574, 31);
+            this.CreateOrder.Location = new System.Drawing.Point(443, 36);
             this.CreateOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CreateOrder.Name = "CreateOrder";
             this.CreateOrder.Size = new System.Drawing.Size(426, 128);
@@ -61,7 +61,7 @@ sealed partial class FormMain
             // 
             this.CustomerList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(119)))), ((int)(((byte)(211)))), ((int)(((byte)(83)))));
             this.CustomerList.Font = new System.Drawing.Font("Microsoft YaHei", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.CustomerList.Location = new System.Drawing.Point(574, 225);
+            this.CustomerList.Location = new System.Drawing.Point(443, 223);
             this.CustomerList.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CustomerList.Name = "CustomerList";
             this.CustomerList.Size = new System.Drawing.Size(426, 128);
@@ -80,8 +80,6 @@ sealed partial class FormMain
             this.Controls.Add(this.CreateOrder);
             this.Controls.Add(this.btnManagement);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "FormMain";
             this.Text = "Form";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OnFormMainClosed);
