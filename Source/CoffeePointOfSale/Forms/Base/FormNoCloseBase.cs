@@ -41,14 +41,21 @@ public class FormNoCloseBase : FormBase
             // 
             // FormNoCloseBase
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.ClientSize = new System.Drawing.Size(1348, 721);
             this.ControlBox = false;
+            this.Margin = new System.Windows.Forms.Padding(3, 12, 3, 12);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormNoCloseBase";
             this.Text = "App AnonymousCustomerId Not Set";
+            this.Load += new System.EventHandler(this.FormNoCloseBase_Load);
             this.ResumeLayout(false);
+
+    }
+
+    private void FormNoCloseBase_Load(object sender, EventArgs e)
+    {
 
     }
 }

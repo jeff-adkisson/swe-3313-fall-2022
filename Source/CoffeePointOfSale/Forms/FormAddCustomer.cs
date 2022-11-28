@@ -27,7 +27,7 @@ namespace CoffeePointOfSale.Forms
 
         private void FormAddCustomer_Load(object sender, EventArgs e)
         {
-
+            error.Hide();
         }
 
         private void FirstName(object sender, EventArgs e)
@@ -42,15 +42,24 @@ namespace CoffeePointOfSale.Forms
 
         private void addNew_Click(object sender, EventArgs e)
         {
-            var newCust = new Customer()
+            if (firtname is null || lN is null || phoneNum is null)
             {
-                FirstName = firtname,
-                LastName = lN,
-                Phone = phoneNum,
-                RewardPoints = 0,
+                error.Show();
+            }
+            else
+            {
+                error.Hide();
+                var newCust = new Customer()
+                {
+                    FirstName = firtname,
+                    LastName = lN,
+                    Phone = phoneNum,
+                    RewardPoints = 0,
 
-            };
-            _customerService.Customers.Add(newCust);
+                };
+                _customerService.Customers.Add(newCust);
+            }
+            
         }
 
         private void phoneNumber_TextChanged(object sender, EventArgs e)
