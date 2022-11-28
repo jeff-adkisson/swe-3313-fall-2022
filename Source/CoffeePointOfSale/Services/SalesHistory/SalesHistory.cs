@@ -9,6 +9,10 @@ namespace CoffeePointOfSale.Services.SalesHistory;
 
 class SalesHistory
 {
+    [JsonProperty("SalesHistory")]
+    private readonly Dictionary<string, SalesHistory> _salesDict = new();
+
+
     public string DateTime = "";
     public Decimal Tax;
     public Decimal Subtotal;
