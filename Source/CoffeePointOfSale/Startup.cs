@@ -21,7 +21,7 @@ internal static class Startup
         ConfigureDependencies(serviceCollection);
         SetupConfiguration(serviceCollection);
     }
-
+    
     /// <summary>
     /// Call this after service provider is completely initialized
     /// </summary>
